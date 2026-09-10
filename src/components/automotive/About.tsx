@@ -37,7 +37,7 @@ export function About() {
       videoRef.current
         .play()
         .then(() => setIsPlaying(true))
-        .catch(() => {});
+        .catch(() => { });
     }
   };
 
@@ -56,7 +56,7 @@ export function About() {
     },
     {
       icon: Shield,
-      title: "Ceramic & Quartz Protection",
+      title: "Nano Technologies",
       tag: "9H Hardness Shield",
       desc: "Ultra-hydrophobic chemical matrix defending factory clear coats and soft finishes against UV, acid rain, and road salt.",
     },
