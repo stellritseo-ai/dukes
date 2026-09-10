@@ -186,7 +186,7 @@ export function About() {
           <h2 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-[42px] lg:leading-[1.12]">
             Where Luxury Meets{" "}
             <span className="bg-gradient-to-r from-primary via-blue-600 to-sky-500 bg-clip-text text-transparent">
-              Absolute Showroom Perfection.
+              Precision Detailing.
             </span>
           </h2>
 
