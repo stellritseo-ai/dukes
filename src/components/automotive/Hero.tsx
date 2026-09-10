@@ -109,9 +109,9 @@ export function Hero() {
           <h1
             className="hero-title mt-0 text-[32px] xs:text-[38px] sm:text-[46px] md:text-[52px] lg:text-[57px] leading-[1.08] mb-3 lg:-mb-[19px]"
           >
-            Luxury Detailing.
+            Where Luxury Meets
             <br />
-            <span className="hero-title-gradient">Showroom Perfection.</span>
+            <span className="hero-title-gradient">Precision Detailing</span>
           </h1>
 
           {/* Elevated Subtitle */}
