@@ -25,13 +25,14 @@ export function Footer() {
   ];
 
   const navigationLinks = [
-    { label: "Home", href: "#home" },
-    { label: "About Us", href: "#about" },
-    { label: "Services", href: "#services" },
-    { label: "Our Work", href: "#our-work" },
-    { label: "Reviews", href: "#reviews" },
-    { label: "Free Estimate", href: "#free-estimate" },
-    { label: "Contact Us", href: "#contact" },
+    { label: "Home", href: "/#home" },
+    { label: "About Us", href: "/about" },
+    { label: "Services", href: "/#services" },
+    { label: "Our Work", href: "/#our-work" },
+    { label: "Reviews", href: "/reviews" },
+    { label: "Free Estimate", href: "/free-estimate" },
+    { label: "Book Your Detail", href: "/book" },
+    { label: "Contact Us", href: "/contact" },
   ];
 
   return (
@@ -232,7 +233,7 @@ export function Footer() {
               {signatureServices.map((service) => (
                 <li key={service.name}>
                   <a
-                    href="#services"
+                    href="/#services"
                     className="group flex items-center justify-between text-slate-300 transition-colors duration-150 hover:text-white"
                   >
                     <span className="group-hover:translate-x-1 transition-transform font-medium">

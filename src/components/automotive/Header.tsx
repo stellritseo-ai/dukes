@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useRouterState } from "@tanstack/react-router";
 import {
   ArrowUpRight,
   CalendarDays,
@@ -22,30 +23,87 @@ export const navItems = [
   "Contact Us",
 ];
 
-export const navHref = (item: string) => `#${item.toLowerCase().replaceAll(" ", "-")}`;
+export const navHref = (item: string) => {
+  if (item === "About Us") return "/about";
+  if (item === "Reviews") return "/reviews";
+  if (item === "Free Estimate") return "/free-estimate";
+  if (item === "Contact Us") return "/contact";
+  return `#${item.toLowerCase().replaceAll(" ", "-")}`;
+};
 
 export const navigationLinks = [
-  { label: "Home", href: "#home", id: "home" },
-  { label: "About Us", href: "#about", id: "about" },
-  { label: "Services", href: "#services", id: "services" },
-  { label: "Our Work", href: "#our-work", id: "our-work" },
-  { label: "Reviews", href: "#reviews", id: "reviews" },
-  { label: "Free Estimate", href: "#free-estimate", id: "free-estimate" },
-  { label: "Contact Us", href: "#contact", id: "contact" },
+  { label: "Home", href: "/#home", id: "home" },
+  { label: "About Us", href: "/about", id: "about" },
+  { label: "Services", href: "/#services", id: "services" },
+  { label: "Our Work", href: "/#our-work", id: "our-work" },
+  { label: "Reviews", href: "/reviews", id: "reviews" },
+  { label: "Free Estimate", href: "/free-estimate", id: "free-estimate" },
+  { label: "Contact Us", href: "/contact", id: "contact" },
 ];
 
 export function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("home");
+
+  const pathname = useRouterState({
+    select: (state) => state.location.pathname,
+  });
+  const isHomePage = pathname === "/" || pathname === "";
+  const isAboutPage = pathname === "/about" || pathname === "/about-us";
+  const isReviewsPage = pathname === "/reviews";
+  const isEstimatePage = pathname === "/free-estimate" || pathname === "/estimate";
+  const isContactPage = pathname === "/contact" || pathname === "/contact-us";
+  const isBookPage = pathname === "/book";
+
+  const defaultActive = isBookPage
+    ? "book"
+    : isContactPage
+    ? "contact"
+    : isEstimatePage
+    ? "free-estimate"
+    : isReviewsPage
+    ? "reviews"
+    : isAboutPage
+    ? "about"
+    : "home";
+  const [activeSection, setActiveSection] = useState(defaultActive);
+
+  useEffect(() => {
+    if (isBookPage) {
+      setActiveSection("book");
+    } else if (isContactPage) {
+      setActiveSection("contact");
+    } else if (isEstimatePage) {
+      setActiveSection("free-estimate");
+    } else if (isReviewsPage) {
+      setActiveSection("reviews");
+    } else if (isAboutPage) {
+      setActiveSection("about");
+    }
+  }, [isAboutPage, isReviewsPage, isEstimatePage, isContactPage, isBookPage]);
+
+  const currentNavLinks = [
+    { label: "Home", href: !isHomePage ? "/#home" : "#home", id: "home" },
+    { label: "About Us", href: "/about", id: "about" },
+    { label: "Services", href: !isHomePage ? "/#services" : "#services", id: "services" },
+    { label: "Our Work", href: !isHomePage ? "/#our-work" : "#our-work", id: "our-work" },
+    { label: "Reviews", href: "/reviews", id: "reviews" },
+    { label: "Free Estimate", href: "/free-estimate", id: "free-estimate" },
+    { label: "Contact Us", href: "/contact", id: "contact" },
+    { label: "Book Your Detail", href: "/book", id: "book" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
       const scrollY = window.scrollY;
       setScrolled(scrollY > 28);
 
-      // ScrollSpy section detection
-      const sections = navigationLinks.map((item) => document.getElementById(item.id));
+      if (!isHomePage) {
+        return;
+      }
+
+      // ScrollSpy section detection for home page
+      const sections = currentNavLinks.map((item) => document.getElementById(item.id));
       const scrollPosition = scrollY + 140;
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -53,7 +111,7 @@ export function Header() {
         if (section) {
           const top = section.offsetTop;
           if (scrollPosition >= top) {
-            const activeId = navigationLinks[i]?.id;
+            const activeId = currentNavLinks[i]?.id;
             if (activeId) {
               setActiveSection(activeId);
             }
@@ -66,7 +124,7 @@ export function Header() {
     handleScroll();
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+  }, [isHomePage]);
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border/80 bg-card/95 backdrop-blur-2xl text-foreground shadow-[0_4px_25px_-4px_rgba(15,23,42,0.06)] transition-all duration-300">
@@ -126,7 +184,7 @@ export function Header() {
           aria-label="Primary navigation"
         >
           <div className="flex items-center gap-0.5 rounded-full border border-border/80 bg-surface-raised/70 p-1.5 text-muted-foreground backdrop-blur-xl shadow-xs transition-all duration-300">
-            {navigationLinks.map((item) => {
+            {currentNavLinks.map((item) => {
               const isActive = activeSection === item.id;
               return (
                 <a
@@ -165,7 +223,7 @@ export function Header() {
             className="h-11 rounded-full px-6 text-xs font-extrabold shadow-premium tracking-wide transition-all duration-200 hover:scale-[1.02] active:scale-[0.98]"
             asChild
           >
-            <a href="#free-estimate">
+            <a href="/book">
               <CalendarDays className="size-3.5" />
               <span>Book Your Detail</span>
               <ArrowUpRight className="size-3.5" />
@@ -219,7 +277,7 @@ export function Header() {
           </div>
 
           <nav className="flex flex-col gap-1" aria-label="Mobile navigation">
-            {navigationLinks.map((item, index) => {
+            {currentNavLinks.map((item, index) => {
               const isActive = activeSection === item.id;
               return (
                 <a
@@ -258,7 +316,7 @@ export function Header() {
             </a>
 
             <Button variant="hero" className="h-12 w-full rounded-xl text-xs font-bold" asChild>
-              <a href="#free-estimate" onClick={() => setOpen(false)}>
+              <a href="/book" onClick={() => setOpen(false)}>
                 <Sparkles className="size-4" />
                 <span>Book Your Detail Now</span>
               </a>
