@@ -5,3 +5,4 @@ export const Route = createFileRoute("/gallery")({
     throw redirect({ to: "/our-work" });
   },
 });
+
