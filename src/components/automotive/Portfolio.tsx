@@ -126,17 +126,28 @@ export function Portfolio() {
           ))}
         </div>
 
-        {/* Bottom Booking Concierge CTA */}
-        <div className="mt-12 text-center">
+        {/* Bottom Booking Concierge CTA & Link to Dedicated Gallery */}
+        <div className="mt-12 flex flex-wrap items-center justify-center gap-3.5">
           <Button
             variant="hero"
             size="lg"
             className="h-11 rounded-full px-8 text-xs sm:text-[13px] font-bold shadow-premium transition-all duration-200 hover:scale-[1.02]"
             asChild
           >
-            <a href="#free-estimate">
-              <span>Reserve Your Treatment Commission</span>
+            <a href="/our-work">
+              <span>View Full 77+ Work Exhibition</span>
               <ArrowRight className="ml-1.5 size-3.5" />
+            </a>
+          </Button>
+
+          <Button
+            variant="glass"
+            size="lg"
+            className="h-11 rounded-full px-7 text-xs sm:text-[13px] font-bold transition-all duration-200 hover:scale-[1.02]"
+            asChild
+          >
+            <a href="#free-estimate">
+              <span>Reserve Your Commission</span>
             </a>
           </Button>
         </div>

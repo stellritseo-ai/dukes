@@ -17,7 +17,10 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as ContactUsRouteImport } from './routes/contact-us'
 import { Route as EstimateRouteImport } from './routes/estimate'
 import { Route as FreeEstimateRouteImport } from './routes/free-estimate'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as OurWorkRouteImport } from './routes/our-work'
 import { Route as ReviewsRouteImport } from './routes/reviews'
+import { Route as WorkRouteImport } from './routes/work'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -59,9 +62,24 @@ const FreeEstimateRoute = FreeEstimateRouteImport.update({
   path: '/free-estimate',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OurWorkRoute = OurWorkRouteImport.update({
+  id: '/our-work',
+  path: '/our-work',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ReviewsRoute = ReviewsRouteImport.update({
   id: '/reviews',
   path: '/reviews',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WorkRoute = WorkRouteImport.update({
+  id: '/work',
+  path: '/work',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -74,7 +92,10 @@ export interface FileRoutesByFullPath {
   '/contact-us': typeof ContactUsRoute
   '/estimate': typeof EstimateRoute
   '/free-estimate': typeof FreeEstimateRoute
+  '/gallery': typeof GalleryRoute
+  '/our-work': typeof OurWorkRoute
   '/reviews': typeof ReviewsRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -85,7 +106,10 @@ export interface FileRoutesByTo {
   '/contact-us': typeof ContactUsRoute
   '/estimate': typeof EstimateRoute
   '/free-estimate': typeof FreeEstimateRoute
+  '/gallery': typeof GalleryRoute
+  '/our-work': typeof OurWorkRoute
   '/reviews': typeof ReviewsRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -97,7 +121,10 @@ export interface FileRoutesById {
   '/contact-us': typeof ContactUsRoute
   '/estimate': typeof EstimateRoute
   '/free-estimate': typeof FreeEstimateRoute
+  '/gallery': typeof GalleryRoute
+  '/our-work': typeof OurWorkRoute
   '/reviews': typeof ReviewsRoute
+  '/work': typeof WorkRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -110,7 +137,10 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/estimate'
     | '/free-estimate'
+    | '/gallery'
+    | '/our-work'
     | '/reviews'
+    | '/work'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -121,7 +151,10 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/estimate'
     | '/free-estimate'
+    | '/gallery'
+    | '/our-work'
     | '/reviews'
+    | '/work'
   id:
     | '__root__'
     | '/'
@@ -132,7 +165,10 @@ export interface FileRouteTypes {
     | '/contact-us'
     | '/estimate'
     | '/free-estimate'
+    | '/gallery'
+    | '/our-work'
     | '/reviews'
+    | '/work'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -144,7 +180,10 @@ export interface RootRouteChildren {
   ContactUsRoute: typeof ContactUsRoute
   EstimateRoute: typeof EstimateRoute
   FreeEstimateRoute: typeof FreeEstimateRoute
+  GalleryRoute: typeof GalleryRoute
+  OurWorkRoute: typeof OurWorkRoute
   ReviewsRoute: typeof ReviewsRoute
+  WorkRoute: typeof WorkRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -205,11 +244,32 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FreeEstimateRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/our-work': {
+      id: '/our-work'
+      path: '/our-work'
+      fullPath: '/our-work'
+      preLoaderRoute: typeof OurWorkRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/reviews': {
       id: '/reviews'
       path: '/reviews'
       fullPath: '/reviews'
       preLoaderRoute: typeof ReviewsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/work': {
+      id: '/work'
+      path: '/work'
+      fullPath: '/work'
+      preLoaderRoute: typeof WorkRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -224,7 +284,10 @@ const rootRouteChildren: RootRouteChildren = {
   ContactUsRoute: ContactUsRoute,
   EstimateRoute: EstimateRoute,
   FreeEstimateRoute: FreeEstimateRoute,
+  GalleryRoute: GalleryRoute,
+  OurWorkRoute: OurWorkRoute,
   ReviewsRoute: ReviewsRoute,
+  WorkRoute: WorkRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

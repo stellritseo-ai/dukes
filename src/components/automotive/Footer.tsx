@@ -28,7 +28,7 @@ export function Footer() {
     { label: "Home", href: "/#home" },
     { label: "About Us", href: "/about" },
     { label: "Services", href: "/#services" },
-    { label: "Our Work", href: "/#our-work" },
+    { label: "Our Work", href: "/our-work" },
     { label: "Reviews", href: "/reviews" },
     { label: "Free Estimate", href: "/free-estimate" },
     { label: "Book Your Detail", href: "/book" },

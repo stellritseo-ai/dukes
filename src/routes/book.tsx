@@ -618,7 +618,7 @@ function BookPage() {
                     <div className="grid gap-3 sm:grid-cols-2">
                       {packages.map((pkg) => {
                         const isSelected = selectedPackage === pkg.id;
-                        const colors = packageColorMap[pkg.color];
+                        const colors = packageColorMap[pkg.color] ?? packageColorMap.primary;
                         return (
                           <button
                             key={pkg.id}
@@ -1086,3 +1086,4 @@ function BookPage() {
     </div>
   );
 }
+

@@ -25,6 +25,7 @@ export const navItems = [
 
 export const navHref = (item: string) => {
   if (item === "About Us") return "/about";
+  if (item === "Our Work") return "/our-work";
   if (item === "Reviews") return "/reviews";
   if (item === "Free Estimate") return "/free-estimate";
   if (item === "Contact Us") return "/contact";
@@ -35,7 +36,7 @@ export const navigationLinks = [
   { label: "Home", href: "/#home", id: "home" },
   { label: "About Us", href: "/about", id: "about" },
   { label: "Services", href: "/#services", id: "services" },
-  { label: "Our Work", href: "/#our-work", id: "our-work" },
+  { label: "Our Work", href: "/our-work", id: "our-work" },
   { label: "Reviews", href: "/reviews", id: "reviews" },
   { label: "Free Estimate", href: "/free-estimate", id: "free-estimate" },
   { label: "Contact Us", href: "/contact", id: "contact" },
@@ -50,6 +51,7 @@ export function Header() {
   });
   const isHomePage = pathname === "/" || pathname === "";
   const isAboutPage = pathname === "/about" || pathname === "/about-us";
+  const isWorkPage = pathname === "/our-work" || pathname === "/work" || pathname === "/gallery";
   const isReviewsPage = pathname === "/reviews";
   const isEstimatePage = pathname === "/free-estimate" || pathname === "/estimate";
   const isContactPage = pathname === "/contact" || pathname === "/contact-us";
@@ -58,14 +60,16 @@ export function Header() {
   const defaultActive = isBookPage
     ? "book"
     : isContactPage
-    ? "contact"
-    : isEstimatePage
-    ? "free-estimate"
-    : isReviewsPage
-    ? "reviews"
-    : isAboutPage
-    ? "about"
-    : "home";
+      ? "contact"
+      : isEstimatePage
+        ? "free-estimate"
+        : isReviewsPage
+          ? "reviews"
+          : isWorkPage
+            ? "our-work"
+            : isAboutPage
+              ? "about"
+              : "home";
   const [activeSection, setActiveSection] = useState(defaultActive);
 
   useEffect(() => {
@@ -77,20 +81,21 @@ export function Header() {
       setActiveSection("free-estimate");
     } else if (isReviewsPage) {
       setActiveSection("reviews");
+    } else if (isWorkPage) {
+      setActiveSection("our-work");
     } else if (isAboutPage) {
       setActiveSection("about");
     }
-  }, [isAboutPage, isReviewsPage, isEstimatePage, isContactPage, isBookPage]);
+  }, [isAboutPage, isWorkPage, isReviewsPage, isEstimatePage, isContactPage, isBookPage]);
 
   const currentNavLinks = [
     { label: "Home", href: !isHomePage ? "/#home" : "#home", id: "home" },
     { label: "About Us", href: "/about", id: "about" },
     { label: "Services", href: !isHomePage ? "/#services" : "#services", id: "services" },
-    { label: "Our Work", href: !isHomePage ? "/#our-work" : "#our-work", id: "our-work" },
+    { label: "Our Work", href: "/our-work", id: "our-work" },
     { label: "Reviews", href: "/reviews", id: "reviews" },
     { label: "Free Estimate", href: "/free-estimate", id: "free-estimate" },
     { label: "Contact Us", href: "/contact", id: "contact" },
-    { label: "Book Your Detail", href: "/book", id: "book" },
   ];
 
   useEffect(() => {
