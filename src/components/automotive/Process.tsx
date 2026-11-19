@@ -324,7 +324,7 @@ export function Process() {
             className="h-11 rounded-full px-8 text-xs sm:text-[13px] font-bold shadow-premium transition-all duration-200 hover:scale-[1.02]"
             asChild
           >
-            <a href="#free-estimate">
+            <a href="/book">
               <span>Experience Our 5-Stage Protocol</span>
               <ArrowRight className="ml-1.5 size-3.5" />
             </a>

@@ -191,14 +191,22 @@ export function ServiceAreas() {
                 </p>
               </div>
 
-              <a
-                href="#contact"
-                className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 px-4 py-2 text-xs font-bold text-white shadow-sm transition-all hover:scale-102 active:scale-98"
-              >
-                <Phone className="size-3.5" />
-                <span>CALL NOW</span>
-                <ArrowUpRight className="size-3.5" />
-              </a>
+              <div className="flex items-center gap-2 shrink-0">
+                <a
+                  href="/contact"
+                  className="inline-flex shrink-0 items-center gap-1 rounded-xl border border-emerald-500/30 bg-emerald-500/10 hover:bg-emerald-500/20 px-3.5 py-2 text-xs font-bold text-emerald-700 dark:text-emerald-300 transition-all hover:scale-102 active:scale-98"
+                >
+                  <span>Inquire</span>
+                </a>
+                <a
+                  href="tel:+14697967732"
+                  className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 px-4 py-2 text-xs font-bold text-white shadow-sm transition-all hover:scale-102 active:scale-98"
+                >
+                  <Phone className="size-3.5" />
+                  <span>CALL NOW</span>
+                  <ArrowUpRight className="size-3.5" />
+                </a>
+              </div>
             </div>
           </div>
 
@@ -305,13 +313,13 @@ export function ServiceAreas() {
                   </div>
                 </div>
                 <div className="flex items-center gap-1 text-slate-400 hidden sm:flex">
-                  <button
-                    type="button"
-                    aria-label="Directions"
+                  <a
+                    href="/contact"
+                    aria-label="Contact Concierge for Route Details"
                     className="p-1 rounded hover:bg-white/10 text-slate-300 transition-colors"
                   >
                     <ArrowUpRight className="size-3.5" />
-                  </button>
+                  </a>
                 </div>
               </div>
 

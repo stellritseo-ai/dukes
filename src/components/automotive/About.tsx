@@ -233,7 +233,7 @@ export function About() {
               className="h-11 sm:h-12 rounded-full px-6 text-xs sm:text-[13px] font-bold shadow-premium tracking-wide transition-all duration-200 hover:scale-[1.02]"
               asChild
             >
-              <a href="#free-estimate">
+              <a href="/book">
                 <CalendarDays className="size-3.5" />
                 <span>Book Your Detail</span>
                 <ArrowUpRight className="size-3.5" />
@@ -256,7 +256,7 @@ export function About() {
               className="h-11 sm:h-12 rounded-full px-5 text-xs sm:text-[13px] font-semibold text-muted-foreground hover:text-foreground border-border/80"
               asChild
             >
-              <a href="#services">
+              <a href="/services">
                 <span>Explore All Services</span>
               </a>
             </Button>

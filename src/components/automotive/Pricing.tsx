@@ -299,7 +299,7 @@ export function Pricing() {
                       )}
                       asChild
                     >
-                      <a href="#free-estimate">
+                      <a href="/book">
                         <span>Reserve {pkg.name}</span>
                         <ArrowRight className="size-3.5" />
                       </a>
@@ -419,7 +419,7 @@ export function Pricing() {
                   )}
                   asChild
                 >
-                  <a href="#free-estimate">
+                  <a href="/book">
                     <span>Reserve {pkg.name}</span>
                     <ArrowRight className="size-3.5" />
                   </a>

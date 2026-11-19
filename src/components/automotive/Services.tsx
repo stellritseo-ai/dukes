@@ -318,7 +318,7 @@ export function Services() {
               className="h-11 rounded-full px-6 text-xs sm:text-[13px] font-bold shadow-premium transition-all duration-200 hover:scale-[1.02]"
               asChild
             >
-              <a href="#free-estimate">
+              <a href="/book">
                 <CalendarDays className="size-3.5" />
                 <span>Reserve Your Appointment</span>
                 <ArrowRight className="size-3.5" />

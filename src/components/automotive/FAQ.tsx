@@ -151,7 +151,7 @@ export function FAQ() {
             {/* Bottom CTA Row matching reference: Solid pill button + Phone link */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center gap-2 rounded-full bg-emerald-700 hover:bg-emerald-800 text-white px-6 py-3 text-xs sm:text-sm font-bold shadow-sm transition-all hover:scale-102 active:scale-98"
               >
                 <span>ASK A QUESTION</span>
@@ -242,7 +242,7 @@ export function FAQ() {
                     </div>
 
                     <a
-                      href="#contact"
+                      href="/book"
                       aria-label="Book a detail"
                       className="flex size-9 sm:size-10 shrink-0 items-center justify-center rounded-full bg-slate-900 dark:bg-emerald-600 text-white shadow-md hover:bg-emerald-600 dark:hover:bg-emerald-700 transition-all hover:scale-105 active:scale-95"
                     >

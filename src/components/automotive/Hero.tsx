@@ -131,7 +131,7 @@ export function Hero() {
               className="group h-11 sm:h-12 rounded-full px-6 text-xs sm:text-[13px] font-bold tracking-wide shadow-[0_6px_24px_rgba(37,99,235,0.4)] transition-all duration-300 hover:scale-[1.02] active:scale-[0.98]"
               asChild
             >
-              <a href="#free-estimate">
+              <a href="/book">
                 <CalendarDays className="size-3.5 transition-transform group-hover:scale-110" />
                 <span>Book Your Mobile Detail</span>
                 <ArrowUpRight className="size-3.5 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
@@ -143,8 +143,8 @@ export function Hero() {
               className="h-11 sm:h-12 rounded-full border-white/20 bg-white/10 px-6 text-xs sm:text-[13px] font-bold text-white backdrop-blur-xl transition-all duration-200 hover:border-white/40 hover:bg-white/20 hover:text-white"
               asChild
             >
-              <a href="#pricing">
-                <span>Explore Packages & Pricing</span>
+              <a href="/services">
+                <span>Explore Packages & Services</span>
                 <ArrowRight className="size-3.5" />
               </a>
             </Button>

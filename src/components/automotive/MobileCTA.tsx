@@ -7,7 +7,7 @@ export function MobileCTA() {
         <Phone className="size-4 text-primary" />
         <span>Call Now</span>
       </a>
-      <a href="#free-estimate">
+      <a href="/book">
         <CalendarDays className="size-4" />
         <span>Book Now</span>
       </a>

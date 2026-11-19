@@ -146,7 +146,7 @@ export function Portfolio() {
             className="h-11 rounded-full px-7 text-xs sm:text-[13px] font-bold transition-all duration-200 hover:scale-[1.02]"
             asChild
           >
-            <a href="#free-estimate">
+            <a href="/book">
               <span>Reserve Your Commission</span>
             </a>
           </Button>

@@ -200,21 +200,21 @@ export function Footer() {
             {/* Social Icons */}
             <div className="flex items-center gap-2.5 pt-2">
               <a
-                href="#contact"
+                href="/contact"
                 aria-label="Facebook"
                 className="flex size-9 items-center justify-center rounded-xl border border-white/15 bg-white/[0.07] text-slate-300 shadow-2xs transition-all duration-200 hover:-translate-y-0.5 hover:border-primary hover:bg-primary/80 hover:text-white hover:shadow-md"
               >
                 <Facebook className="size-4" />
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 aria-label="Instagram"
                 className="flex size-9 items-center justify-center rounded-xl border border-white/15 bg-white/[0.07] text-slate-300 shadow-2xs transition-all duration-200 hover:-translate-y-0.5 hover:border-primary hover:bg-primary/80 hover:text-white hover:shadow-md"
               >
                 <Instagram className="size-4" />
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 aria-label="LinkedIn"
                 className="flex size-9 items-center justify-center rounded-xl border border-white/15 bg-white/[0.07] text-slate-300 shadow-2xs transition-all duration-200 hover:-translate-y-0.5 hover:border-primary hover:bg-primary/80 hover:text-white hover:shadow-md"
               >
@@ -276,13 +276,13 @@ export function Footer() {
           </p>
 
           <div className="flex flex-wrap items-center justify-center gap-6">
-            <a href="#contact" className="hover:text-white transition-colors font-medium">
+            <a href="/contact" className="hover:text-white transition-colors font-medium">
               Privacy Policy
             </a>
-            <a href="#contact" className="hover:text-white transition-colors font-medium">
+            <a href="/contact" className="hover:text-white transition-colors font-medium">
               Terms of Service
             </a>
-            <a href="#service-area" className="hover:text-white transition-colors font-medium">
+            <a href="/contact" className="hover:text-white transition-colors font-medium">
               Service Radius
             </a>
 

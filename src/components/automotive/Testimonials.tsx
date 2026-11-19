@@ -1,4 +1,5 @@
 import { Star, BadgeCheck, Car, Sparkles, ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 // Official Google "G" 4-color SVG Icon
@@ -292,7 +293,10 @@ export function Testimonials() {
           </p>
 
           {/* Google Verified Rating Summary Badge */}
-          <div className="mt-6 inline-flex flex-wrap items-center justify-center gap-3 sm:gap-4 rounded-2xl sm:rounded-full border border-border/90 bg-card px-4 sm:px-6 py-2 shadow-xs ring-1 ring-border/20">
+          <a
+            href="/reviews"
+            className="group mt-6 inline-flex flex-wrap items-center justify-center gap-3 sm:gap-4 rounded-2xl sm:rounded-full border border-border/90 bg-card px-4 sm:px-6 py-2 shadow-xs ring-1 ring-border/20 transition-all duration-200 hover:border-primary/50 hover:shadow-md cursor-pointer"
+          >
             <div className="flex items-center gap-2">
               <GoogleGIcon className="size-4.5" />
               <span className="text-sm font-bold text-foreground">Google</span>
@@ -307,15 +311,16 @@ export function Testimonials() {
               </div>
             </div>
             <div className="h-4 w-px bg-border hidden sm:block" />
-            <div className="flex items-center gap-1.5 text-xs text-muted-foreground">
+            <div className="flex items-center gap-1.5 text-xs text-muted-foreground group-hover:text-primary transition-colors">
               <span className="font-semibold text-foreground">185+ Reviews</span>
               <span>•</span>
               <span className="flex items-center gap-1 font-semibold text-emerald-600 dark:text-emerald-400">
                 <BadgeCheck className="size-3.5 text-emerald-600 fill-emerald-100" />
                 100% Verified
               </span>
+              <ArrowRight className="size-3 ml-0.5 text-primary transition-transform group-hover:translate-x-1" />
             </div>
-          </div>
+          </a>
         </div>
       </div>
 
@@ -356,18 +361,29 @@ export function Testimonials() {
         </div>
       </div>
 
-      {/* Bottom Subtle Link */}
-      <div className="site-shell relative z-10 mt-10 sm:mt-12 text-center">
-        <p className="text-xs sm:text-sm text-muted-foreground">
-          Experience the Grand Duke difference for yourself.{" "}
-          <a
-            href="#free-estimate"
-            className="inline-flex items-center gap-1 font-semibold text-primary underline-offset-4 hover:underline transition-colors"
-          >
-            Schedule Your Vehicle Service
-            <ArrowRight className="size-3.5" />
+      {/* Bottom Action Button Cluster */}
+      <div className="site-shell relative z-10 mt-10 sm:mt-12 flex flex-wrap items-center justify-center gap-3.5 sm:gap-4">
+        <Button
+          variant="hero"
+          className="h-11 rounded-full px-7 text-xs sm:text-[13px] font-bold shadow-premium transition-all duration-200 hover:scale-[1.02]"
+          asChild
+        >
+          <a href="/book">
+            <span>Book Your Concierge Detail</span>
+            <ArrowRight className="ml-1.5 size-3.5" />
           </a>
-        </p>
+        </Button>
+
+        <Button
+          variant="glass"
+          className="h-11 rounded-full px-6 text-xs sm:text-[13px] font-bold transition-all duration-200 hover:scale-[1.02]"
+          asChild
+        >
+          <a href="/reviews">
+            <span>Read All 185+ Client Reviews</span>
+            <ArrowRight className="ml-1.5 size-3.5" />
+          </a>
+        </Button>
       </div>
     </section>
   );
