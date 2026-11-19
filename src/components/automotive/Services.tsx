@@ -190,7 +190,8 @@ export function Services() {
             return (
               <article
                 key={service.id}
-                className="group relative flex flex-col overflow-hidden rounded-[2.25rem] border border-border/80 bg-card p-2 sm:p-2.5 shadow-[0_15px_40px_-15px_rgba(15,23,42,0.08)] ring-1 ring-border/40 transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 hover:shadow-[0_28px_70px_-12px_rgba(37,99,235,0.18)]"
+                id={service.id}
+                className="group relative flex flex-col overflow-hidden rounded-[2.25rem] border border-border/80 bg-card p-2 sm:p-2.5 shadow-[0_15px_40px_-15px_rgba(15,23,42,0.08)] ring-1 ring-border/40 transition-all duration-300 hover:-translate-y-2 hover:border-primary/50 hover:shadow-[0_28px_70px_-12px_rgba(37,99,235,0.18)] scroll-mt-32"
               >
                 {/* Upper Media Canvas with Custom High-Definition Imagery */}
                 <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[1.75rem] bg-slate-950">
