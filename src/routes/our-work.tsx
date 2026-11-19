@@ -117,37 +117,6 @@ const categoryTabs = [
   { id: "exotics", label: "Exotics & Fleet", count: galleryStats.exotics },
 ];
 
-const categoryColorStyles: Record<
-  GalleryPhoto["category"],
-  { badge: string; border: string; glow: string }
-> = {
-  "paint-correction": {
-    badge: "bg-blue-500/10 text-blue-600 border-blue-500/20",
-    border: "hover:border-blue-500/40",
-    glow: "group-hover:shadow-[0_12px_28px_-6px_rgba(37,99,235,0.2)]",
-  },
-  ceramic: {
-    badge: "bg-cyan-500/10 text-cyan-700 dark:text-cyan-400 border-cyan-500/20",
-    border: "hover:border-cyan-500/40",
-    glow: "group-hover:shadow-[0_12px_28px_-6px_rgba(6,182,212,0.2)]",
-  },
-  interior: {
-    badge: "bg-emerald-500/10 text-emerald-600 border-emerald-500/20",
-    border: "hover:border-emerald-500/40",
-    glow: "group-hover:shadow-[0_12px_28px_-6px_rgba(16,185,129,0.2)]",
-  },
-  wheels: {
-    badge: "bg-amber-500/10 text-amber-700 dark:text-amber-400 border-amber-500/20",
-    border: "hover:border-amber-500/40",
-    glow: "group-hover:shadow-[0_12px_28px_-6px_rgba(245,158,11,0.2)]",
-  },
-  exotics: {
-    badge: "bg-purple-500/10 text-purple-600 border-purple-500/20",
-    border: "hover:border-purple-500/40",
-    glow: "group-hover:shadow-[0_12px_28px_-6px_rgba(168,85,247,0.2)]",
-  },
-};
-
 const disciplines = [
   {
     title: "Optical Paint Clarification",
@@ -548,7 +517,7 @@ function OurWorkPage() {
               })}
             </div>
 
-            {/* ── Gallery Cards Grid ── */}
+            {/* ── Gallery Cards Grid: Pure Photography (No Text) ── */}
             {filteredPhotos.length === 0 ? (
               <div className="rounded-3xl border border-dashed border-border/80 bg-card/60 p-12 text-center my-8">
                 <Search className="size-10 text-muted-foreground/40 mx-auto mb-3" />
@@ -573,87 +542,34 @@ function OurWorkPage() {
             ) : (
               <div
                 className={cn(
-                  "grid gap-4 sm:gap-5",
+                  "grid gap-4 sm:gap-4.5",
                   layoutMode === "dense"
                     ? "grid-cols-2 md:grid-cols-3 xl:grid-cols-4"
                     : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
                 )}
               >
-                {visiblePhotos.map((photo, index) => {
-                  const style = categoryColorStyles[photo.category];
-                  return (
-                    <div
-                      key={photo.id}
-                      onClick={() => setActivePhoto(photo)}
-                      className={cn(
-                        "group relative overflow-hidden rounded-2xl sm:rounded-3xl border border-border/80 bg-card shadow-xs transition-all duration-300 hover:-translate-y-1.5 cursor-pointer ring-1 ring-border/30",
-                        style.border,
-                        style.glow
-                      )}
-                    >
-                      {/* Image Frame */}
-                      <div className="relative aspect-[4/3] w-full overflow-hidden bg-slate-950">
-                        <img
-                          src={photo.src}
-                          alt={`${photo.vehicle} - ${photo.title} by Grand Duke Automotive`}
-                          loading={index < 8 ? "eager" : "lazy"}
-                          decoding="async"
-                          className="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-108"
-                        />
+                {visiblePhotos.map((photo, index) => (
+                  <div
+                    key={photo.id}
+                    onClick={() => setActivePhoto(photo)}
+                    className="group relative aspect-[4/3] w-full overflow-hidden rounded-xl sm:rounded-2xl border border-border/80 bg-card shadow-[0_4px_16px_-4px_rgba(15,23,42,0.06)] ring-1 ring-border/30 transition-all duration-300 hover:-translate-y-1 hover:border-primary/50 hover:shadow-[0_14px_30px_-6px_rgba(37,99,235,0.16)] cursor-pointer"
+                  >
+                    <img
+                      src={photo.src}
+                      alt={`Grand Duke Automotive Detail - #${index + 1}`}
+                      loading={index < 8 ? "eager" : "lazy"}
+                      decoding="async"
+                      className="size-full object-cover transition-transform duration-500 ease-out group-hover:scale-105"
+                    />
 
-                        {/* Top Gradient & Pill Badge */}
-                        <div className="pointer-events-none absolute inset-x-0 top-0 p-3 flex items-center justify-between bg-gradient-to-b from-black/60 via-transparent to-transparent">
-                          <span
-                            className={cn(
-                              "inline-flex items-center gap-1 rounded-full border px-2.5 py-0.5 text-[10px] font-extrabold backdrop-blur-md shadow-xs",
-                              style.badge
-                            )}
-                          >
-                            <Sparkles className="size-2.5 shrink-0" />
-                            <span>{photo.badge}</span>
-                          </span>
-
-                          <span className="text-[10px] font-mono font-bold text-white/80 bg-black/40 px-2 py-0.5 rounded-full backdrop-blur-xs">
-                            #{index + 1}
-                          </span>
-                        </div>
-
-                        {/* Hover Overlay with Zoom Icon */}
-                        <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex flex-col justify-end p-4">
-                          <div className="flex items-center justify-between text-white">
-                            <div>
-                              <div className="text-xs font-black tracking-wide">
-                                {photo.vehicle}
-                              </div>
-                              <div className="text-[11px] text-slate-300 font-medium line-clamp-1">
-                                {photo.title}
-                              </div>
-                            </div>
-                            <div className="flex size-8 items-center justify-center rounded-full bg-primary/90 text-white shadow-md backdrop-blur-xs transform scale-90 group-hover:scale-100 transition-transform">
-                              <ZoomIn className="size-4" />
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {/* Card Bottom Meta (Always Visible for Crisp Hierarchy) */}
-                      <div className="p-3.5 sm:p-4 bg-card border-t border-border/50">
-                        <div className="flex items-center justify-between text-[11px] text-muted-foreground mb-1">
-                          <span className="font-bold text-primary truncate max-w-[70%]">
-                            {photo.categoryLabel}
-                          </span>
-                          <span className="text-[10px] font-semibold">Verified</span>
-                        </div>
-                        <h3 className="text-xs sm:text-[13px] font-bold text-foreground leading-snug line-clamp-1 group-hover:text-primary transition-colors">
-                          {photo.vehicle}
-                        </h3>
-                        <p className="mt-1 text-[11px] text-muted-foreground leading-relaxed line-clamp-1">
-                          {photo.title}
-                        </p>
+                    {/* Minimal hover zoom indicator (No text on image) */}
+                    <div className="pointer-events-none absolute inset-0 bg-black/20 opacity-0 transition-opacity duration-300 group-hover:opacity-100 flex items-center justify-center">
+                      <div className="flex size-9 items-center justify-center rounded-full border border-white/30 bg-black/60 text-white shadow-lg backdrop-blur-md transform scale-90 transition-transform duration-300 group-hover:scale-100">
+                        <ZoomIn className="size-3.5" />
                       </div>
                     </div>
-                  );
-                })}
+                  </div>
+                ))}
               </div>
             )}
 
@@ -901,50 +817,39 @@ function OurWorkPage() {
       </main>
 
       {/* ========================================================================= */}
-      {/* HIGH-RESOLUTION INSPECTION LIGHTBOX DIALOG                                */}
+      {/* PURE IMAGE HIGH-RESOLUTION INSPECTION LIGHTBOX (NO TEXT)                  */}
       {/* ========================================================================= */}
       <Dialog
         open={Boolean(activePhoto)}
         onOpenChange={(open) => !open && setActivePhoto(null)}
       >
-        <DialogContent className="max-w-5xl p-0 overflow-hidden border border-white/20 bg-slate-950 text-white shadow-2xl rounded-2xl sm:rounded-3xl">
+        <DialogContent className="max-w-5xl p-0 overflow-hidden border border-white/20 bg-black text-white shadow-2xl rounded-2xl sm:rounded-3xl">
           {activePhoto && (
-            <div className="relative flex flex-col bg-slate-950">
-              {/* Lightbox Top Header Bar */}
-              <div className="flex items-center justify-between border-b border-white/10 px-4 sm:px-6 py-3.5 bg-slate-900/80 backdrop-blur-md">
-                <div className="flex items-center gap-3">
-                  <span className="rounded-full bg-primary/20 border border-primary/40 px-3 py-1 text-xs font-bold text-primary-bright">
-                    {activePhoto.badge}
-                  </span>
-                  <div className="text-xs sm:text-sm font-bold text-white truncate max-w-[220px] sm:max-w-md">
-                    {activePhoto.vehicle}
-                  </div>
+            <div className="relative flex flex-col bg-black">
+              {/* Minimal Top Header: Image Counter & Close Button */}
+              <div className="flex items-center justify-between px-4 sm:px-6 py-3 border-b border-white/10 bg-black/60">
+                <div className="text-xs font-mono text-slate-400">
+                  {currentIndex + 1} / {filteredPhotos.length}
                 </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="text-[11px] font-mono text-slate-400">
-                    {currentIndex + 1} of {filteredPhotos.length}
-                  </div>
-                  <button
-                    type="button"
-                    onClick={() => setActivePhoto(null)}
-                    aria-label="Close Lightbox"
-                    className="flex size-8 items-center justify-center rounded-full bg-white/10 text-slate-300 hover:bg-white/20 hover:text-white transition-colors"
-                  >
-                    <X className="size-4" />
-                  </button>
-                </div>
+                <button
+                  type="button"
+                  onClick={() => setActivePhoto(null)}
+                  aria-label="Close Lightbox"
+                  className="flex size-8 items-center justify-center rounded-full bg-white/10 text-slate-300 hover:bg-white/20 hover:text-white transition-colors cursor-pointer"
+                >
+                  <X className="size-4" />
+                </button>
               </div>
 
-              {/* Main Image Stage with Next/Prev Overlay Arrows */}
-              <div className="relative flex items-center justify-center bg-black min-h-[300px] max-h-[75vh] overflow-hidden">
+              {/* Main Pure Image Viewport with Previous & Next Chevron Controls */}
+              <div className="relative flex items-center justify-center bg-black min-h-[300px] max-h-[82vh] overflow-hidden p-2 sm:p-4">
                 <img
                   src={activePhoto.src}
-                  alt={`${activePhoto.vehicle} - ${activePhoto.title}`}
-                  className="max-h-[75vh] w-auto max-w-full object-contain mx-auto select-none"
+                  alt={`Grand Duke Automotive Detail - #${currentIndex + 1}`}
+                  className="max-h-[80vh] w-auto max-w-full object-contain mx-auto select-none rounded-lg"
                 />
 
-                {/* Left arrow */}
+                {/* Left navigation arrow */}
                 <button
                   type="button"
                   onClick={(e) => {
@@ -952,12 +857,12 @@ function OurWorkPage() {
                     handlePrev();
                   }}
                   aria-label="Previous Transformation"
-                  className="absolute left-3 top-1/2 -translate-y-1/2 flex size-11 items-center justify-center rounded-full bg-black/60 text-white border border-white/20 backdrop-blur-md hover:bg-primary transition-all hover:scale-105 cursor-pointer"
+                  className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 flex size-10 sm:size-12 items-center justify-center rounded-full bg-black/65 text-white border border-white/20 backdrop-blur-md hover:bg-primary transition-all hover:scale-105 cursor-pointer"
                 >
                   <ChevronLeft className="size-6" />
                 </button>
 
-                {/* Right arrow */}
+                {/* Right navigation arrow */}
                 <button
                   type="button"
                   onClick={(e) => {
@@ -965,46 +870,10 @@ function OurWorkPage() {
                     handleNext();
                   }}
                   aria-label="Next Transformation"
-                  className="absolute right-3 top-1/2 -translate-y-1/2 flex size-11 items-center justify-center rounded-full bg-black/60 text-white border border-white/20 backdrop-blur-md hover:bg-primary transition-all hover:scale-105 cursor-pointer"
+                  className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 flex size-10 sm:size-12 items-center justify-center rounded-full bg-black/65 text-white border border-white/20 backdrop-blur-md hover:bg-primary transition-all hover:scale-105 cursor-pointer"
                 >
                   <ChevronRight className="size-6" />
                 </button>
-              </div>
-
-              {/* Lightbox Bottom Detail & Action Footer */}
-              <div className="border-t border-white/10 p-4 sm:p-6 bg-slate-900/90 backdrop-blur-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <div className="max-w-xl">
-                  <div className="text-sm sm:text-base font-extrabold text-white">
-                    {activePhoto.title}
-                  </div>
-                  <p className="mt-1 text-xs text-slate-300 leading-relaxed font-normal">
-                    {activePhoto.description}
-                  </p>
-                </div>
-
-                <div className="flex items-center gap-2.5 w-full sm:w-auto shrink-0">
-                  <Button
-                    variant="hero"
-                    className="h-10 rounded-full px-5 text-xs font-bold w-full sm:w-auto"
-                    asChild
-                  >
-                    <a href="/book">
-                      <CalendarDays className="size-3.5 mr-1.5" />
-                      <span>Book Treatment</span>
-                    </a>
-                  </Button>
-
-                  <Button
-                    variant="glass"
-                    className="h-10 rounded-full px-4 text-xs font-bold text-white border-white/20 hover:bg-white/10"
-                    asChild
-                  >
-                    <a href="/free-estimate">
-                      <span>Get Quote</span>
-                      <ArrowUpRight className="size-3.5 ml-1" />
-                    </a>
-                  </Button>
-                </div>
               </div>
             </div>
           )}
@@ -1016,3 +885,4 @@ function OurWorkPage() {
     </div>
   );
 }
+
