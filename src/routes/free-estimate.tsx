@@ -330,7 +330,7 @@ function FreeEstimatePage() {
         {/* ========================================================================= */}
         {/* SECTION 1: HERO & ANTHEM                                                  */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-border/70 bg-gradient-to-b from-card via-background to-surface/40">
+        <section id="brodcome" aria-label="Brodcome Navigation & Hero Banner" className="relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-border/70 bg-gradient-to-b from-card via-background to-surface/40">
           {/* Luxury High-Gloss Automotive Background Image with Atmospheric Overlays */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <img
