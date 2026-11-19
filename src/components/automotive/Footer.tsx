@@ -15,19 +15,18 @@ import { BrandMark } from "./BrandMark";
 
 export function Footer() {
   const signatureServices = [
-    { name: "Multi-Stage Machine Paint Correction", tag: "Flagship" },
-    { name: "Liquid Quartz 9H Ceramic Shield", tag: "5-Yr Shield" },
-    { name: "Alcantara & Nappa Leather Revival", tag: "Interior" },
-    { name: "Touchless 0 PPM Snow Foam Wash", tag: "Deionized" },
-    { name: "Wheel Barrel & Ceramic Caliper Seal", tag: "Bespoke" },
-    { name: "Full Concours Vehicle Restoration", tag: "Master Tier" },
-    { name: "Thermal Steam Engine Bay Sanitization", tag: "Precision" },
+    { name: "Multi-Stage Machine Polish", tag: "Correction", href: "/services/machine-polish" },
+    { name: "Concours Ceramic & Quartz Shield", tag: "5-Yr Shield", href: "/services/ceramic-shield" },
+    { name: "Deionized Spot-Free Hydro Wash", tag: "0 PPM Pure", href: "/services/deionized-wash" },
+    { name: "Interior Leather Restoration & Steam", tag: "220°F Vapor", href: "/services/interior-steam" },
+    { name: "Wheel Decon & Satin Dressing", tag: "Iron Purge", href: "/services/wheel-glass" },
+    { name: "The Duke Signature Concours Detail", tag: "Master Tier", href: "/services/signature-detail" },
   ];
 
   const navigationLinks = [
     { label: "Home", href: "/#home" },
     { label: "About Us", href: "/about" },
-    { label: "Services", href: "/#services" },
+    { label: "Services", href: "/services" },
     { label: "Our Work", href: "/our-work" },
     { label: "Reviews", href: "/reviews" },
     { label: "Free Estimate", href: "/free-estimate" },
@@ -233,7 +232,7 @@ export function Footer() {
               {signatureServices.map((service) => (
                 <li key={service.name}>
                   <a
-                    href="/#services"
+                    href={service.href}
                     className="group flex items-center justify-between text-slate-300 transition-colors duration-150 hover:text-white"
                   >
                     <span className="group-hover:translate-x-1 transition-transform font-medium">

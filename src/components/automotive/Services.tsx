@@ -253,15 +253,18 @@ export function Services() {
                     ))}
                   </ul>
 
-                  {/* Action Link & Duration Tier Footer */}
+                  {/* Action Link & Dedicated Page Footer */}
                   <div className="mt-auto pt-4 border-t border-border/40 flex items-center justify-between">
-                    <div className="flex items-center gap-1.5 text-[11px] font-semibold text-muted-foreground">
-                      <Clock className="size-3 text-primary" />
-                      <span>{service.tier}</span>
-                    </div>
+                    <a
+                      href={`/services/${service.id}`}
+                      className="group/view inline-flex items-center gap-1 text-xs font-bold text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <span>Dedicated Page</span>
+                      <ArrowRight className="size-3 transition-transform group-hover/view:translate-x-0.5" />
+                    </a>
 
                     <a
-                      href="#free-estimate"
+                      href="/book"
                       className="group/link inline-flex items-center gap-1.5 text-xs font-bold text-primary transition-colors hover:text-foreground"
                     >
                       <span>Book Treatment</span>

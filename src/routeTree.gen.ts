@@ -21,6 +21,13 @@ import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as OurWorkRouteImport } from './routes/our-work'
 import { Route as ReviewsRouteImport } from './routes/reviews'
 import { Route as WorkRouteImport } from './routes/work'
+import { Route as ServicesIndexRouteImport } from './routes/services/index'
+import { Route as ServicesCeramicShieldRouteImport } from './routes/services/ceramic-shield'
+import { Route as ServicesDeionizedWashRouteImport } from './routes/services/deionized-wash'
+import { Route as ServicesInteriorSteamRouteImport } from './routes/services/interior-steam'
+import { Route as ServicesMachinePolishRouteImport } from './routes/services/machine-polish'
+import { Route as ServicesSignatureDetailRouteImport } from './routes/services/signature-detail'
+import { Route as ServicesWheelGlassRouteImport } from './routes/services/wheel-glass'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -82,6 +89,41 @@ const WorkRoute = WorkRouteImport.update({
   path: '/work',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesIndexRoute = ServicesIndexRouteImport.update({
+  id: '/services/',
+  path: '/services/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesCeramicShieldRoute = ServicesCeramicShieldRouteImport.update({
+  id: '/services/ceramic-shield',
+  path: '/services/ceramic-shield',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesDeionizedWashRoute = ServicesDeionizedWashRouteImport.update({
+  id: '/services/deionized-wash',
+  path: '/services/deionized-wash',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesInteriorSteamRoute = ServicesInteriorSteamRouteImport.update({
+  id: '/services/interior-steam',
+  path: '/services/interior-steam',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesMachinePolishRoute = ServicesMachinePolishRouteImport.update({
+  id: '/services/machine-polish',
+  path: '/services/machine-polish',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesSignatureDetailRoute = ServicesSignatureDetailRouteImport.update({
+  id: '/services/signature-detail',
+  path: '/services/signature-detail',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesWheelGlassRoute = ServicesWheelGlassRouteImport.update({
+  id: '/services/wheel-glass',
+  path: '/services/wheel-glass',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -96,6 +138,13 @@ export interface FileRoutesByFullPath {
   '/our-work': typeof OurWorkRoute
   '/reviews': typeof ReviewsRoute
   '/work': typeof WorkRoute
+  '/services/ceramic-shield': typeof ServicesCeramicShieldRoute
+  '/services/deionized-wash': typeof ServicesDeionizedWashRoute
+  '/services/interior-steam': typeof ServicesInteriorSteamRoute
+  '/services/machine-polish': typeof ServicesMachinePolishRoute
+  '/services/signature-detail': typeof ServicesSignatureDetailRoute
+  '/services/wheel-glass': typeof ServicesWheelGlassRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -110,6 +159,13 @@ export interface FileRoutesByTo {
   '/our-work': typeof OurWorkRoute
   '/reviews': typeof ReviewsRoute
   '/work': typeof WorkRoute
+  '/services/ceramic-shield': typeof ServicesCeramicShieldRoute
+  '/services/deionized-wash': typeof ServicesDeionizedWashRoute
+  '/services/interior-steam': typeof ServicesInteriorSteamRoute
+  '/services/machine-polish': typeof ServicesMachinePolishRoute
+  '/services/signature-detail': typeof ServicesSignatureDetailRoute
+  '/services/wheel-glass': typeof ServicesWheelGlassRoute
+  '/services': typeof ServicesIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -125,6 +181,13 @@ export interface FileRoutesById {
   '/our-work': typeof OurWorkRoute
   '/reviews': typeof ReviewsRoute
   '/work': typeof WorkRoute
+  '/services/ceramic-shield': typeof ServicesCeramicShieldRoute
+  '/services/deionized-wash': typeof ServicesDeionizedWashRoute
+  '/services/interior-steam': typeof ServicesInteriorSteamRoute
+  '/services/machine-polish': typeof ServicesMachinePolishRoute
+  '/services/signature-detail': typeof ServicesSignatureDetailRoute
+  '/services/wheel-glass': typeof ServicesWheelGlassRoute
+  '/services/': typeof ServicesIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,6 +204,13 @@ export interface FileRouteTypes {
     | '/our-work'
     | '/reviews'
     | '/work'
+    | '/services/ceramic-shield'
+    | '/services/deionized-wash'
+    | '/services/interior-steam'
+    | '/services/machine-polish'
+    | '/services/signature-detail'
+    | '/services/wheel-glass'
+    | '/services/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -155,6 +225,13 @@ export interface FileRouteTypes {
     | '/our-work'
     | '/reviews'
     | '/work'
+    | '/services/ceramic-shield'
+    | '/services/deionized-wash'
+    | '/services/interior-steam'
+    | '/services/machine-polish'
+    | '/services/signature-detail'
+    | '/services/wheel-glass'
+    | '/services'
   id:
     | '__root__'
     | '/'
@@ -169,6 +246,13 @@ export interface FileRouteTypes {
     | '/our-work'
     | '/reviews'
     | '/work'
+    | '/services/ceramic-shield'
+    | '/services/deionized-wash'
+    | '/services/interior-steam'
+    | '/services/machine-polish'
+    | '/services/signature-detail'
+    | '/services/wheel-glass'
+    | '/services/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -184,6 +268,13 @@ export interface RootRouteChildren {
   OurWorkRoute: typeof OurWorkRoute
   ReviewsRoute: typeof ReviewsRoute
   WorkRoute: typeof WorkRoute
+  ServicesCeramicShieldRoute: typeof ServicesCeramicShieldRoute
+  ServicesDeionizedWashRoute: typeof ServicesDeionizedWashRoute
+  ServicesInteriorSteamRoute: typeof ServicesInteriorSteamRoute
+  ServicesMachinePolishRoute: typeof ServicesMachinePolishRoute
+  ServicesSignatureDetailRoute: typeof ServicesSignatureDetailRoute
+  ServicesWheelGlassRoute: typeof ServicesWheelGlassRoute
+  ServicesIndexRoute: typeof ServicesIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -272,6 +363,55 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WorkRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/': {
+      id: '/services/'
+      path: '/services'
+      fullPath: '/services/'
+      preLoaderRoute: typeof ServicesIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/ceramic-shield': {
+      id: '/services/ceramic-shield'
+      path: '/services/ceramic-shield'
+      fullPath: '/services/ceramic-shield'
+      preLoaderRoute: typeof ServicesCeramicShieldRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/deionized-wash': {
+      id: '/services/deionized-wash'
+      path: '/services/deionized-wash'
+      fullPath: '/services/deionized-wash'
+      preLoaderRoute: typeof ServicesDeionizedWashRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/interior-steam': {
+      id: '/services/interior-steam'
+      path: '/services/interior-steam'
+      fullPath: '/services/interior-steam'
+      preLoaderRoute: typeof ServicesInteriorSteamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/machine-polish': {
+      id: '/services/machine-polish'
+      path: '/services/machine-polish'
+      fullPath: '/services/machine-polish'
+      preLoaderRoute: typeof ServicesMachinePolishRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/signature-detail': {
+      id: '/services/signature-detail'
+      path: '/services/signature-detail'
+      fullPath: '/services/signature-detail'
+      preLoaderRoute: typeof ServicesSignatureDetailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services/wheel-glass': {
+      id: '/services/wheel-glass'
+      path: '/services/wheel-glass'
+      fullPath: '/services/wheel-glass'
+      preLoaderRoute: typeof ServicesWheelGlassRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -288,6 +428,13 @@ const rootRouteChildren: RootRouteChildren = {
   OurWorkRoute: OurWorkRoute,
   ReviewsRoute: ReviewsRoute,
   WorkRoute: WorkRoute,
+  ServicesCeramicShieldRoute: ServicesCeramicShieldRoute,
+  ServicesDeionizedWashRoute: ServicesDeionizedWashRoute,
+  ServicesInteriorSteamRoute: ServicesInteriorSteamRoute,
+  ServicesMachinePolishRoute: ServicesMachinePolishRoute,
+  ServicesSignatureDetailRoute: ServicesSignatureDetailRoute,
+  ServicesWheelGlassRoute: ServicesWheelGlassRoute,
+  ServicesIndexRoute: ServicesIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

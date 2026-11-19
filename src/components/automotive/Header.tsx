@@ -32,6 +32,7 @@ export const navItems = [
 
 export const navHref = (item: string) => {
   if (item === "About Us") return "/about";
+  if (item === "Services") return "/services";
   if (item === "Our Work") return "/our-work";
   if (item === "Reviews") return "/reviews";
   if (item === "Free Estimate") return "/free-estimate";
@@ -42,7 +43,7 @@ export const navHref = (item: string) => {
 export const navigationLinks = [
   { label: "Home", href: "/#home", id: "home" },
   { label: "About Us", href: "/about", id: "about" },
-  { label: "Services", href: "/#services", id: "services" },
+  { label: "Services", href: "/services", id: "services" },
   { label: "Our Work", href: "/our-work", id: "our-work" },
   { label: "Reviews", href: "/reviews", id: "reviews" },
   { label: "Free Estimate", href: "/free-estimate", id: "free-estimate" },
@@ -64,7 +65,7 @@ export const subServices: SubService[] = [
   {
     title: "Multi-Stage Machine Polish",
     id: "machine-polish",
-    href: "/#machine-polish",
+    href: "/services/machine-polish",
     desc: "Dual-action rotary swirl eradication & micro-jewel finishing.",
     badge: "Stage 1 & 2",
     icon: Sparkles,
@@ -74,7 +75,7 @@ export const subServices: SubService[] = [
   {
     title: "Concours Ceramic & Quartz Shield",
     id: "ceramic-shield",
-    href: "/#ceramic-shield",
+    href: "/services/ceramic-shield",
     desc: "9H nanotech quartz molecular bonding & liquid candy gloss.",
     badge: "9H Liquid Quartz",
     icon: ShieldCheck,
@@ -84,7 +85,7 @@ export const subServices: SubService[] = [
   {
     title: "Deionized Spot-Free Hydro Wash",
     id: "deionized-wash",
-    href: "/#deionized-wash",
+    href: "/services/deionized-wash",
     desc: "0 PPM aerospace deionized water foam dirt encapsulation bath.",
     badge: "0 PPM Pure",
     icon: Droplets,
@@ -94,7 +95,7 @@ export const subServices: SubService[] = [
   {
     title: "Interior Leather Restoration & Steam",
     id: "interior-steam",
-    href: "/#interior-steam",
+    href: "/services/interior-steam",
     desc: "220°F dry thermal vapor, aniline nourishment & sterile cabin prep.",
     badge: "220°F Vapor",
     icon: Wind,
@@ -104,7 +105,7 @@ export const subServices: SubService[] = [
   {
     title: "Wheel Decon & Satin Dressing",
     id: "wheel-glass",
-    href: "/#wheel-glass",
+    href: "/services/wheel-glass",
     desc: "Barrel iron dissolution, caliper detail & non-sling satin UV tire coat.",
     badge: "Iron Purge",
     icon: CircleDot,
@@ -114,7 +115,7 @@ export const subServices: SubService[] = [
   {
     title: "The Duke Signature Concours Detail",
     id: "signature-detail",
-    href: "/#signature-detail",
+    href: "/services/signature-detail",
     desc: "Our master full-day comprehensive exterior & interior transformation.",
     badge: "Flagship Detail",
     icon: Crown,
@@ -137,29 +138,34 @@ export function Header() {
   });
   const isHomePage = pathname === "/" || pathname === "";
   const isAboutPage = pathname === "/about" || pathname === "/about-us";
+  const isServicesPage = pathname.startsWith("/services");
   const isWorkPage = pathname === "/our-work" || pathname === "/work" || pathname === "/gallery";
   const isReviewsPage = pathname === "/reviews";
   const isEstimatePage = pathname === "/free-estimate" || pathname === "/estimate";
   const isContactPage = pathname === "/contact" || pathname === "/contact-us";
   const isBookPage = pathname === "/book";
 
-  const defaultActive = isBookPage
-    ? "book"
-    : isContactPage
-      ? "contact"
-      : isEstimatePage
-        ? "free-estimate"
-        : isReviewsPage
-          ? "reviews"
-          : isWorkPage
-            ? "our-work"
-            : isAboutPage
-              ? "about"
-              : "home";
+  const defaultActive = isServicesPage
+    ? "services"
+    : isBookPage
+      ? "book"
+      : isContactPage
+        ? "contact"
+        : isEstimatePage
+          ? "free-estimate"
+          : isReviewsPage
+            ? "reviews"
+            : isWorkPage
+              ? "our-work"
+              : isAboutPage
+                ? "about"
+                : "home";
   const [activeSection, setActiveSection] = useState(defaultActive);
 
   useEffect(() => {
-    if (isBookPage) {
+    if (isServicesPage) {
+      setActiveSection("services");
+    } else if (isBookPage) {
       setActiveSection("book");
     } else if (isContactPage) {
       setActiveSection("contact");
@@ -172,12 +178,12 @@ export function Header() {
     } else if (isAboutPage) {
       setActiveSection("about");
     }
-  }, [isAboutPage, isWorkPage, isReviewsPage, isEstimatePage, isContactPage, isBookPage]);
+  }, [isAboutPage, isWorkPage, isReviewsPage, isEstimatePage, isContactPage, isBookPage, isServicesPage]);
 
   const currentNavLinks = [
     { label: "Home", href: !isHomePage ? "/#home" : "#home", id: "home" },
     { label: "About Us", href: "/about", id: "about" },
-    { label: "Services", href: !isHomePage ? "/#services" : "#services", id: "services" },
+    { label: "Services", href: "/services", id: "services" },
     { label: "Our Work", href: "/our-work", id: "our-work" },
     { label: "Reviews", href: "/reviews", id: "reviews" },
     { label: "Free Estimate", href: "/free-estimate", id: "free-estimate" },
@@ -386,7 +392,7 @@ export function Header() {
                             </span>
                           </div>
                           <a
-                            href={!isHomePage ? "/#services" : "#services"}
+                            href="/services"
                             onClick={() => {
                               setActiveSection("services");
                               setServicesOpen(false);
@@ -405,7 +411,7 @@ export function Header() {
                             return (
                               <a
                                 key={sub.id}
-                                href={!isHomePage ? sub.href : sub.href.replace("/", "")}
+                                href={sub.href}
                                 onClick={() => {
                                   setActiveSection("services");
                                   setServicesOpen(false);
@@ -633,7 +639,7 @@ export function Header() {
                     >
                       <div className="flex flex-col gap-1 border-l-2 border-primary/30 pl-3 my-1">
                         <a
-                          href={!isHomePage ? "/#services" : "#services"}
+                          href="/services"
                           onClick={() => {
                             setActiveSection("services");
                             setOpen(false);
@@ -649,7 +655,7 @@ export function Header() {
                           return (
                             <a
                               key={sub.id}
-                              href={!isHomePage ? sub.href : sub.href.replace("/", "")}
+                              href={sub.href}
                               onClick={() => {
                                 setActiveSection("services");
                                 setOpen(false);
