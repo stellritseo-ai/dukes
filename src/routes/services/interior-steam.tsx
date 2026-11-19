@@ -50,6 +50,40 @@ export const Route = createFileRoute("/services/interior-steam")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/services/interior-steam" },
+      { property: "og:image", content: "/logo.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content: "Interior Leather Restoration & Steam | Grand Duke Automotive",
+      },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: "/logo.png" },
+    ],
+    links: [{ rel: "canonical", href: "/services/interior-steam" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "Interior Leather Restoration & Steam",
+          description,
+          provider: {
+            "@type": "AutomotiveBusiness",
+            name: "Grand Duke Automotive",
+            telephone: "+15043502935",
+            email: "info@grandduke.com",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "1234 Main Street",
+              addressLocality: "City",
+              addressCountry: "Country",
+            },
+            areaServed: "300-Mile Radius",
+          },
+          url: "https://granddukeautomotive.com/services/interior-steam",
+        }),
+      },
     ],
   }),
   component: InteriorSteamPage,
@@ -154,11 +188,11 @@ function InteriorSteamPage() {
                 </Button>
 
                 <a
-                  href="tel:64687967732"
+                  href="tel:+15043502935"
                   className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 bg-black/60 px-6 text-xs sm:text-sm font-bold text-white shadow-xs transition-all duration-200 hover:border-cyan-400 hover:text-cyan-300"
                 >
                   <Phone className="size-3.5 text-cyan-400" />
-                  <span>Call: 6468 796 7732</span>
+                  <span>Call: (504) 350-2935</span>
                 </a>
               </div>
             </div>
@@ -514,11 +548,11 @@ function InteriorSteamPage() {
                 </a>
               </Button>
               <a
-                href="tel:64687967732"
+                href="tel:+15043502935"
                 className="inline-flex h-12 items-center gap-2 rounded-full border border-border bg-card px-6 text-xs sm:text-sm font-bold text-foreground shadow-xs transition-colors hover:border-primary/40 hover:text-primary"
               >
                 <Phone className="size-3.5 text-primary" />
-                <span>Call: 6468 796 7732</span>
+                <span>Call: (504) 350-2935</span>
               </a>
             </div>
           </div>

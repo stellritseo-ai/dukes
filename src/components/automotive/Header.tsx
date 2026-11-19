@@ -296,11 +296,11 @@ export function Header() {
             <span className="opacity-85">Hours: Monday – Friday: 24 Hours • 24X7 Emergency Service As Well</span>
             <span className="opacity-40">•</span>
             <a
-              href="tel:+14697967732"
+              href="tel:+15043502935"
               className="flex items-center gap-1.5 font-bold text-foreground transition-colors hover:text-primary"
             >
               <Phone className="size-3 text-primary" />
-              <span>Direct Concierge: (469) 796-7732</span>
+              <span>Direct Concierge: (504) 350-2935</span>
             </a>
           </div>
         </div>
@@ -508,13 +508,13 @@ export function Header() {
         {/* Right CTA Area */}
         <div className="hidden items-center gap-3 md:flex">
           <a
-            href="tel:+14697967732"
+            href="tel:+15043502935"
             className="group inline-flex items-center gap-2 rounded-full border border-border bg-card px-4 py-2 text-xs font-bold text-foreground shadow-xs transition-all duration-200 hover:border-primary/40 hover:text-primary"
           >
             <span className="flex size-5 items-center justify-center rounded-full bg-primary/20 text-primary transition-transform duration-200 group-hover:scale-110">
               <Phone className="size-2.5" />
             </span>
-            <span>(469) 796-7732</span>
+            <span>(504) 350-2935</span>
           </a>
 
           <Button
@@ -534,7 +534,7 @@ export function Header() {
         {/* Mobile Menu Controls */}
         <div className="flex items-center gap-2 xl:hidden">
           <a
-            href="tel:+14697967732"
+            href="tel:+15043502935"
             aria-label="Call concierge"
             className="flex size-10 items-center justify-center rounded-xl border border-border bg-card text-foreground shadow-xs transition-colors hover:text-primary md:hidden"
           >
@@ -719,11 +719,11 @@ export function Header() {
 
           <div className="mt-6 flex flex-col gap-3 border-t border-border pt-5">
             <a
-              href="tel:+14697967732"
+              href="tel:+15043502935"
               className="flex h-12 items-center justify-center gap-2.5 rounded-xl border border-border bg-surface text-xs font-bold text-foreground shadow-xs transition-colors hover:border-primary/50"
             >
               <Phone className="size-4 text-primary" />
-              <span>Call Concierge: (469) 796-7732</span>
+              <span>Call Concierge: (504) 350-2935</span>
             </a>
 
             <Button variant="hero" className="h-12 w-full rounded-xl text-xs font-bold" asChild>

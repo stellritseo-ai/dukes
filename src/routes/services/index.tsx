@@ -53,6 +53,64 @@ export const Route = createFileRoute("/services/")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/services" },
+      { property: "og:image", content: "/logo.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content: "Concours Detailing Services | Grand Duke Automotive",
+      },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: "/logo.png" },
+    ],
+    links: [{ rel: "canonical", href: "/services" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "Grand Duke Automotive Detailing Services",
+          description,
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "Multi-Stage Machine Polish",
+              url: "https://granddukeautomotive.com/services/machine-polish",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "Concours Ceramic & Quartz Shield",
+              url: "https://granddukeautomotive.com/services/ceramic-shield",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "Deionized Spot-Free Hydro Wash",
+              url: "https://granddukeautomotive.com/services/deionized-wash",
+            },
+            {
+              "@type": "ListItem",
+              position: 4,
+              name: "Interior Leather Restoration & Steam",
+              url: "https://granddukeautomotive.com/services/interior-steam",
+            },
+            {
+              "@type": "ListItem",
+              position: 5,
+              name: "Wheel Decon & Satin Dressing",
+              url: "https://granddukeautomotive.com/services/wheel-glass",
+            },
+            {
+              "@type": "ListItem",
+              position: 6,
+              name: "The Duke Signature Concours Detail",
+              url: "https://granddukeautomotive.com/services/signature-detail",
+            },
+          ],
+        }),
+      },
     ],
   }),
   component: ServicesIndexPage,
@@ -278,11 +336,11 @@ function ServicesIndexPage() {
                 </Button>
 
                 <a
-                  href="tel:64687967732"
+                  href="tel:+15043502935"
                   className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 bg-black/60 px-6 text-xs sm:text-sm font-bold text-white shadow-xs transition-all duration-200 hover:border-cyan-400 hover:text-cyan-300"
                 >
                   <Phone className="size-3.5 text-cyan-400" />
-                  <span>Call: 6468 796 7732</span>
+                  <span>Call: (504) 350-2935</span>
                 </a>
               </div>
             </div>
@@ -529,11 +587,11 @@ function ServicesIndexPage() {
                 </a>
               </Button>
               <a
-                href="tel:64687967732"
+                href="tel:+15043502935"
                 className="inline-flex h-12 items-center gap-2 rounded-full border border-border bg-card px-6 text-xs sm:text-sm font-bold text-foreground shadow-xs transition-colors hover:border-primary/40 hover:text-primary"
               >
                 <Phone className="size-3.5 text-primary" />
-                <span>Call: 6468 796 7732</span>
+                <span>Call: (504) 350-2935</span>
               </a>
             </div>
           </div>

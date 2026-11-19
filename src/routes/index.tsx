@@ -38,12 +38,14 @@ export const Route = createFileRoute("/")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/" },
+      { property: "og:image", content: "/logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
         content: "Grand Duke Automotive | Luxury Mobile Detailing",
       },
       { name: "twitter:description", content: description },
+      { name: "twitter:image", content: "/logo.png" },
     ],
     links: [{ rel: "canonical", href: "/" }],
     scripts: [
@@ -56,9 +58,10 @@ export const Route = createFileRoute("/")({
               "@type": "AutomotiveBusiness",
               name: "Grand Duke Automotive",
               url: "/",
-              telephone: "+14697967732",
+              telephone: "+15043502935",
               email: "detailbrandco@gmail.com",
               description,
+              image: "/logo.png",
               priceRange: "$$$",
               address: {
                 "@type": "PostalAddress",
@@ -67,6 +70,13 @@ export const Route = createFileRoute("/")({
                 addressCountry: "Country",
               },
               openingHours: "Mo-Fr 00:00-24:00, Sa-Su 00:00-24:00",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5.0",
+                reviewCount: "185",
+                bestRating: "5",
+                worstRating: "1",
+              },
               serviceArea: {
                 "@type": "GeoCircle",
                 description: "Mobile Detailing Service Area",

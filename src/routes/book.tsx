@@ -52,6 +52,56 @@ export const Route = createFileRoute("/book")({
       },
       { property: "og:title", content: "Book Your Detail | Grand Duke Automotive" },
       { property: "og:description", content: description },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/book" },
+      { property: "og:image", content: "/logo.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      {
+        name: "twitter:title",
+        content: "Book Your Detail | Grand Duke Automotive",
+      },
+      { name: "twitter:description", content: description },
+      { name: "twitter:image", content: "/logo.png" },
+    ],
+    links: [{ rel: "canonical", href: "/book" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          name: "Book Your Detail | Grand Duke Automotive",
+          description,
+          url: "/book",
+          mainEntity: {
+            "@type": "AutomotiveBusiness",
+            name: "Grand Duke Automotive",
+            telephone: "+15043502935",
+            email: "info@grandduke.com",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "1234 Main Street",
+              addressLocality: "City",
+              addressCountry: "Country",
+            },
+            potentialAction: {
+              "@type": "ReserveAction",
+              target: {
+                "@type": "EntryPoint",
+                urlTemplate: "https://granddukeautomotive.com/book",
+                actionPlatform: [
+                  "http://schema.org/DesktopWebPlatform",
+                  "http://schema.org/MobileWebPlatform",
+                ],
+              },
+              result: {
+                "@type": "Reservation",
+                name: "Automotive Detailing Appointment",
+              },
+            },
+          },
+        }),
+      },
     ],
   }),
   component: BookPage,
@@ -405,11 +455,11 @@ function BookPage() {
                 </Button>
 
                 <a
-                  href="tel:64687967732"
+                  href="tel:+15043502935"
                   className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 bg-black/60 px-6 text-xs sm:text-sm font-bold text-white shadow-xs transition-all duration-200 hover:border-cyan-400 hover:text-cyan-300"
                 >
                   <Phone className="size-3.5 text-cyan-400" />
-                  <span>Call: 6468 796 7732</span>
+                  <span>Call: (504) 350-2935</span>
                 </a>
               </div>
             </div>
@@ -1061,7 +1111,7 @@ function BookPage() {
 
                 <div className="mt-6 space-y-3.5">
                   {[
-                    { icon: Phone, label: "Call Us", value: "6468 796 7732", href: "tel:64687967732", color: "primary" },
+                    { icon: Phone, label: "Call Us", value: "(504) 350-2935", href: "tel:+15043502935", color: "primary" },
                     { icon: Mail, label: "Email Us", value: "info@grandduke.com", href: "mailto:info@grandduke.com", color: "emerald" },
                     { icon: MapPin, label: "Visit Our Studio", value: "1234 Main Street, City, Country", href: "#", color: "sky" },
                     { icon: Clock, label: "Hours", value: "Monday – Friday, 7:00 AM – 6:00 PM", href: "#", color: "amber" },
@@ -1148,11 +1198,11 @@ function BookPage() {
                 </a>
               </Button>
               <a
-                href="tel:64687967732"
+                href="tel:+15043502935"
                 className="inline-flex h-12 items-center gap-2 rounded-full border border-border/80 bg-card px-7 text-xs sm:text-sm font-bold text-foreground shadow-xs transition-all hover:border-primary/40 hover:text-primary"
               >
                 <Phone className="size-4 text-primary" />
-                <span>Call: 6468 796 7732</span>
+                <span>Call: (504) 350-2935</span>
               </a>
             </div>
 

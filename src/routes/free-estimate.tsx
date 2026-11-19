@@ -61,12 +61,14 @@ export const Route = createFileRoute("/free-estimate")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/free-estimate" },
+      { property: "og:image", content: "/logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
         content: "Request Your Free Estimate | Grand Duke Automotive",
       },
       { name: "twitter:description", content: description },
+      { name: "twitter:image", content: "/logo.png" },
     ],
     links: [{ rel: "canonical", href: "/free-estimate" }],
     scripts: [
@@ -80,7 +82,7 @@ export const Route = createFileRoute("/free-estimate")({
           mainEntity: {
             "@type": "AutomotiveBusiness",
             name: "Grand Duke Automotive",
-            telephone: "+14697967732",
+            telephone: "+15043502935",
             email: "info@grandduke.com",
             priceRange: "$$$",
             address: {
@@ -430,11 +432,11 @@ function FreeEstimatePage() {
                 </Button>
 
                 <a
-                  href="tel:64687967732"
+                  href="tel:+15043502935"
                   className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 bg-black/60 px-6 text-xs sm:text-sm font-bold text-white shadow-xs transition-all duration-200 hover:border-cyan-400 hover:text-cyan-300"
                 >
                   <Phone className="size-3.5 text-cyan-400" />
-                  <span>Call: 6468 796 7732</span>
+                  <span>Call: (504) 350-2935</span>
                 </a>
               </div>
             </div>
@@ -1045,17 +1047,14 @@ function FreeEstimatePage() {
                     Call Us
                   </div>
                   <a
-                    href="tel:64687967732"
+                    href="tel:+15043502935"
                     className="mt-1 block text-base font-bold text-foreground hover:text-primary transition-colors"
                   >
-                    6468 796 7732
+                    (504) 350-2935
                   </a>
-                  <a
-                    href="tel:+14697967732"
-                    className="text-xs text-muted-foreground hover:text-primary transition-colors"
-                  >
-                    Alt: (469) 796-7732
-                  </a>
+                  <span className="text-xs text-muted-foreground">
+                    Direct Concierge Hotline
+                  </span>
                 </div>
                 <div className="mt-4 pt-3 border-t border-border/50 text-[11px] text-muted-foreground">
                   Direct master technician line
@@ -1245,11 +1244,11 @@ function FreeEstimatePage() {
               </Button>
 
               <a
-                href="tel:64687967732"
+                href="tel:+15043502935"
                 className="inline-flex h-12 items-center gap-2 rounded-full border border-border/80 bg-card px-5 text-xs sm:text-sm font-bold text-foreground shadow-xs transition-all duration-200 hover:border-primary/40 hover:text-primary"
               >
                 <Phone className="size-3.5 text-primary" />
-                <span>Call Concierge: 6468 796 7732</span>
+                <span>Call Concierge: (504) 350-2935</span>
               </a>
             </div>
           </div>

@@ -61,12 +61,14 @@ export const Route = createFileRoute("/about")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/about" },
+      { property: "og:image", content: "/logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
         content: "About Grand Duke Automotive | Precision. Protection. Perfection.",
       },
       { name: "twitter:description", content: description },
+      { name: "twitter:image", content: "/logo.png" },
     ],
     links: [{ rel: "canonical", href: "/about" }],
     scripts: [
@@ -80,7 +82,7 @@ export const Route = createFileRoute("/about")({
           mainEntity: {
             "@type": "AutomotiveBusiness",
             name: "Grand Duke Automotive",
-            telephone: "+14697967732",
+            telephone: "+15043502935",
             email: "detailbrandco@gmail.com",
             address: {
               "@type": "PostalAddress",
@@ -399,11 +401,11 @@ function AboutPage() {
                 </Button>
 
                 <a
-                  href="tel:64687967732"
+                  href="tel:+15043502935"
                   className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 bg-black/60 px-6 text-xs sm:text-sm font-bold text-white shadow-xs transition-all duration-200 hover:border-cyan-400 hover:text-cyan-300"
                 >
                   <Phone className="size-3.5 text-cyan-400" />
-                  <span>Call: 6468 796 7732</span>
+                  <span>Call: (504) 350-2935</span>
                 </a>
               </div>
             </div>
@@ -1008,7 +1010,7 @@ function AboutPage() {
                       <div className="text-[11px] text-slate-300">Concierge pick-up &amp; mobile fleet dispatch</div>
                     </div>
                     <a
-                      href="tel:+14697967732"
+                      href="tel:+15043502935"
                       className="rounded-lg bg-primary px-3 py-1.5 text-[11px] font-bold text-white hover:bg-primary-bright"
                     >
                       Call Fleet
@@ -1058,10 +1060,10 @@ function AboutPage() {
                     Direct Concierge
                   </div>
                   <a
-                    href="tel:+14697967732"
+                    href="tel:+15043502935"
                     className="text-sm font-bold text-foreground hover:text-primary truncate block"
                   >
-                    (469) 796-7732
+                    (504) 350-2935
                   </a>
                 </div>
               </div>

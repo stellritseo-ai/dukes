@@ -194,9 +194,9 @@ export function Footer() {
                 className="h-12 rounded-full border-white/20 bg-white/10 px-6 text-xs sm:text-[13px] font-bold text-white backdrop-blur-xl transition-all duration-200 hover:border-white/40 hover:bg-white/20 hover:text-white w-full sm:w-auto"
                 asChild
               >
-                <a href="tel:+14697967732">
+                <a href="tel:+15043502935">
                   <Phone className="size-3.5 text-primary-bright" />
-                  <span>Call (469) 796-7732</span>
+                  <span>Call (504) 350-2935</span>
                 </a>
               </Button>
             </div>
@@ -209,7 +209,7 @@ export function Footer() {
         <div className="grid gap-5 md:grid-cols-3 mb-14 lg:mb-16 items-stretch">
           {/* Card 1: Direct Hotline */}
           <a
-            href="tel:+14697967732"
+            href="tel:+15043502935"
             className="group relative overflow-hidden rounded-2xl border border-slate-700/70 bg-slate-900/85 backdrop-blur-xl p-5 sm:p-6 shadow-xl ring-1 ring-white/5 transition-all duration-300 hover:-translate-y-1 hover:border-primary/60 hover:bg-slate-900/95 hover:shadow-[0_20px_45px_-10px_rgba(37,99,235,0.25)] flex flex-col justify-between h-full"
           >
             <div className="flex items-start justify-between gap-3">
@@ -230,7 +230,7 @@ export function Footer() {
                 DIRECT CONCIERGE HOTLINE
               </div>
               <div className="text-xl sm:text-2xl font-black tracking-tight text-white group-hover:text-primary transition-colors mt-0.5">
-                (469) 796-7732
+                (504) 350-2935
               </div>
               <p className="text-xs text-slate-300/90 mt-1.5 leading-relaxed">
                 Instant dispatch, VIP consultation &amp; emergency vehicle collection.

@@ -159,11 +159,11 @@ export function FAQ() {
               </a>
 
               <a
-                href="tel:+14697967732"
+                href="tel:+15043502935"
                 className="inline-flex items-center gap-2 text-xs sm:text-sm font-bold text-foreground hover:text-emerald-600 transition-colors"
               >
                 <Phone className="size-3.5 text-emerald-600" />
-                <span>Call (469) 796-7732</span>
+                <span>Call (504) 350-2935</span>
               </a>
             </div>
           </div>
@@ -201,11 +201,11 @@ export function FAQ() {
 
                 {/* Top-Right Floating Badge: Phone pill */}
                 <a
-                  href="tel:+14697967732"
+                  href="tel:+15043502935"
                   className="absolute right-2.5 top-2.5 sm:right-3.5 sm:top-3.5 z-20 flex items-center gap-1.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white px-2.5 sm:px-3.5 py-1.5 text-[11px] sm:text-xs font-bold shadow-lg transition-transform hover:scale-105 active:scale-95"
                 >
                   <Phone className="size-3" />
-                  <span><span className="hidden xs:inline">(469) </span>796-7732</span>
+                  <span><span className="hidden xs:inline">(504) </span>350-2935</span>
                 </a>
 
                 {/* Bottom Floating White Card Tray matching reference */}
@@ -237,7 +237,7 @@ export function FAQ() {
                         AUTONOMOUS FLEET • 300-MILE RADIUS
                       </div>
                       <div className="text-xs sm:text-sm font-extrabold text-foreground tracking-tight">
-                        Call (469) 796-7732 for Free Quotes
+                        Call (504) 350-2935 for Free Quotes
                       </div>
                     </div>
 

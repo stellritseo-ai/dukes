@@ -57,12 +57,14 @@ export const Route = createFileRoute("/reviews")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/reviews" },
+      { property: "og:image", content: "/logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
         content: "Client Reviews & Testimonials | Grand Duke Automotive",
       },
       { name: "twitter:description", content: description },
+      { name: "twitter:image", content: "/logo.png" },
     ],
     links: [{ rel: "canonical", href: "/reviews" }],
     scripts: [
@@ -78,7 +80,7 @@ export const Route = createFileRoute("/reviews")({
             itemReviewed: {
               "@type": "AutomotiveBusiness",
               name: "Grand Duke Automotive",
-              telephone: "+14697967732",
+              telephone: "+15043502935",
               address: {
                 "@type": "PostalAddress",
                 streetAddress: "1234 Main Street",
@@ -87,7 +89,7 @@ export const Route = createFileRoute("/reviews")({
               },
             },
             ratingValue: "5.0",
-            reviewCount: "120",
+            reviewCount: "185",
             bestRating: "5",
             worstRating: "1",
           },
@@ -552,11 +554,11 @@ function ReviewsPage() {
                 </Button>
 
                 <a
-                  href="tel:64687967732"
+                  href="tel:+15043502935"
                   className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 bg-black/60 px-6 text-xs sm:text-sm font-bold text-white shadow-xs transition-all duration-200 hover:border-cyan-400 hover:text-cyan-300"
                 >
                   <Phone className="size-3.5 text-cyan-400" />
-                  <span>Call: 6468 796 7732</span>
+                  <span>Call: (504) 350-2935</span>
                 </a>
               </div>
             </div>
@@ -899,19 +901,11 @@ function ReviewsPage() {
               <div className="mt-6 flex flex-wrap items-center justify-center gap-4 text-xs font-semibold text-muted-foreground">
                 <span>Have questions before booking?</span>
                 <a
-                  href="tel:+14697967732"
+                  href="tel:+15043502935"
                   className="inline-flex items-center gap-1 text-primary hover:underline font-bold"
                 >
                   <Phone className="size-3" />
-                  <span>Call (469) 796-7732</span>
-                </a>
-                <span>•</span>
-                <a
-                  href="tel:64687967732"
-                  className="inline-flex items-center gap-1 text-primary hover:underline font-bold"
-                >
-                  <Phone className="size-3" />
-                  <span>6468 796 7732</span>
+                  <span>Call (504) 350-2935</span>
                 </a>
                 <span>•</span>
                 <a
@@ -935,13 +929,13 @@ function ReviewsPage() {
                     Direct Concierge
                   </div>
                   <a
-                    href="tel:+14697967732"
+                    href="tel:+15043502935"
                     className="text-sm font-bold text-foreground hover:text-primary truncate block"
                   >
-                    (469) 796-7732
+                    (504) 350-2935
                   </a>
                   <div className="text-[10.5px] text-muted-foreground truncate">
-                    Alt: 6468 796 7732
+                    Available Mon – Fri
                   </div>
                 </div>
               </div>

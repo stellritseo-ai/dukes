@@ -61,12 +61,14 @@ export const Route = createFileRoute("/contact")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/contact" },
+      { property: "og:image", content: "/logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
         content: "Contact Grand Duke Automotive | Let's Talk About Your Vehicle",
       },
       { name: "twitter:description", content: description },
+      { name: "twitter:image", content: "/logo.png" },
     ],
     links: [{ rel: "canonical", href: "/contact" }],
     scripts: [
@@ -80,7 +82,7 @@ export const Route = createFileRoute("/contact")({
           mainEntity: {
             "@type": "AutomotiveBusiness",
             name: "Grand Duke Automotive",
-            telephone: "+14697967732",
+            telephone: "+15043502935",
             email: "info@grandduke.com",
             address: {
               "@type": "PostalAddress",
@@ -299,11 +301,11 @@ function ContactPage() {
                 </Button>
 
                 <a
-                  href="tel:64687967732"
+                  href="tel:+15043502935"
                   className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 bg-black/60 px-6 text-xs sm:text-sm font-bold text-white shadow-xs transition-all duration-200 hover:border-cyan-400 hover:text-cyan-300"
                 >
                   <Phone className="size-3.5 text-cyan-400" />
-                  <span>Call: 6468 796 7732</span>
+                  <span>Call: (504) 350-2935</span>
                 </a>
               </div>
             </div>
@@ -403,17 +405,14 @@ function ContactPage() {
                   </div>
                   <h3 className="text-lg font-bold text-foreground mt-0.5">Call Us</h3>
                   <a
-                    href="tel:64687967732"
+                    href="tel:+15043502935"
                     className="mt-2 block text-xl font-black text-foreground hover:text-primary transition-colors tracking-tight"
                   >
-                    6468 796 7732
+                    (504) 350-2935
                   </a>
-                  <a
-                    href="tel:+14697967732"
-                    className="block text-xs font-semibold text-muted-foreground hover:text-primary transition-colors mt-0.5"
-                  >
-                    Hotline: (469) 796-7732
-                  </a>
+                  <span className="block text-xs font-semibold text-muted-foreground mt-0.5">
+                    Concierge Hotline &amp; Dispatch
+                  </span>
                   <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
                     Speak directly with a detailing specialist about your vehicle's needs, service availability, or to schedule an appointment.
                   </p>
@@ -970,7 +969,7 @@ function ContactPage() {
                       <div className="text-[11px] text-slate-300">Studio &amp; Mobile Concierge Fleet Base</div>
                     </div>
                     <a
-                      href="tel:64687967732"
+                      href="tel:+15043502935"
                       className="rounded-lg bg-primary px-3 py-1.5 text-[11px] font-bold text-white hover:bg-primary-bright"
                     >
                       Call Base
@@ -1076,11 +1075,11 @@ function ContactPage() {
               </Button>
 
               <a
-                href="tel:64687967732"
+                href="tel:+15043502935"
                 className="inline-flex h-12 items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-7 text-xs sm:text-sm font-extrabold text-primary shadow-xs transition-all hover:bg-primary hover:text-white"
               >
                 <Phone className="size-4" />
-                <span>CALL US: 6468 796 7732</span>
+                <span>CALL US: (504) 350-2935</span>
               </a>
 
               <a

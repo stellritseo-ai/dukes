@@ -754,7 +754,7 @@ export function QuoteForm() {
             {/* Direct Phone Assistance Banner */}
             <div className="border-t border-border/60 pt-4">
               <a
-                href="tel:+14697967732"
+                href="tel:+15043502935"
                 className="flex items-center justify-between rounded-2xl border border-border/80 bg-card p-3.5 transition-all hover:border-primary/50 hover:shadow-xs"
               >
                 <div className="flex items-center gap-2.5">
@@ -766,7 +766,7 @@ export function QuoteForm() {
                       Direct Concierge
                     </div>
                     <div className="text-xs font-bold text-foreground">
-                      (469) 796-7732
+                      (504) 350-2935
                     </div>
                   </div>
                 </div>

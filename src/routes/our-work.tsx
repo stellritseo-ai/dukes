@@ -71,12 +71,14 @@ export const Route = createFileRoute("/our-work")({
       { property: "og:description", content: description },
       { property: "og:type", content: "website" },
       { property: "og:url", content: "/our-work" },
+      { property: "og:image", content: "/logo.png" },
       { name: "twitter:card", content: "summary_large_image" },
       {
         name: "twitter:title",
         content: "Our Work & Gallery | Grand Duke Automotive",
       },
       { name: "twitter:description", content: description },
+      { name: "twitter:image", content: "/logo.png" },
     ],
     links: [{ rel: "canonical", href: "/our-work" }],
     scripts: [
@@ -90,7 +92,7 @@ export const Route = createFileRoute("/our-work")({
           provider: {
             "@type": "AutomotiveBusiness",
             name: "Grand Duke Automotive",
-            telephone: "+14697967732",
+            telephone: "+15043502935",
             address: {
               "@type": "PostalAddress",
               streetAddress: "1234 Main Street",
@@ -370,11 +372,11 @@ function OurWorkPage() {
                 </Button>
 
                 <a
-                  href="tel:64687967732"
+                  href="tel:+15043502935"
                   className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 bg-black/60 px-6 text-xs sm:text-sm font-bold text-white shadow-xs transition-all duration-200 hover:border-cyan-400 hover:text-cyan-300"
                 >
                   <Phone className="size-3.5 text-cyan-400" />
-                  <span>Call: 6468 796 7732</span>
+                  <span>Call: (504) 350-2935</span>
                 </a>
               </div>
             </div>
@@ -816,11 +818,11 @@ function OurWorkPage() {
               </Button>
 
               <a
-                href="tel:64687967732"
+                href="tel:+15043502935"
                 className="inline-flex h-12 items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-6 text-xs sm:text-sm font-extrabold text-primary shadow-xs transition-all hover:bg-primary hover:text-white"
               >
                 <Phone className="size-4" />
-                <span>Call: 6468 796 7732</span>
+                <span>Call: (504) 350-2935</span>
               </a>
             </div>
 

@@ -199,7 +199,7 @@ export function ServiceAreas() {
                   <span>Inquire</span>
                 </a>
                 <a
-                  href="tel:+14697967732"
+                  href="tel:+15043502935"
                   className="inline-flex shrink-0 items-center gap-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-700 px-4 py-2 text-xs font-bold text-white shadow-sm transition-all hover:scale-102 active:scale-98"
                 >
                   <Phone className="size-3.5" />
