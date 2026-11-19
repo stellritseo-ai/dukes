@@ -27,6 +27,7 @@ import { Header } from "@/components/automotive/Header";
 import { Footer } from "@/components/automotive/Footer";
 import { MobileCTA } from "@/components/automotive/MobileCTA";
 import { TrustStrip } from "@/components/automotive/TrustStrip";
+import { PageBreadcrumb } from "@/components/automotive/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -323,12 +324,8 @@ function BookPage() {
           <div className="pointer-events-none absolute right-0 top-1/4 h-96 w-96 rounded-full bg-sky-400/8 blur-[140px]" aria-hidden="true" />
 
           <div className="site-shell relative z-10">
-            {/* Breadcrumb */}
-            <nav className="mb-6 flex items-center justify-center gap-2 text-xs font-semibold text-muted-foreground" aria-label="Breadcrumb">
-              <a href="/" className="transition-colors hover:text-primary">Home</a>
-              <ChevronRight className="size-3 opacity-40" />
-              <span className="text-foreground">Book Your Detail</span>
-            </nav>
+            {/* Premium Floating Breadcrumb Pill */}
+            <PageBreadcrumb currentPage="Book Your Detail" />
 
             <div className="mx-auto max-w-4xl text-center flex flex-col items-center">
               {/* Eyebrow */}

@@ -36,6 +36,7 @@ import { Header } from "@/components/automotive/Header";
 import { Footer } from "@/components/automotive/Footer";
 import { MobileCTA } from "@/components/automotive/MobileCTA";
 import { TrustStrip } from "@/components/automotive/TrustStrip";
+import { PageBreadcrumb } from "@/components/automotive/PageBreadcrumb";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
@@ -272,17 +273,8 @@ function OurWorkPage() {
           />
 
           <div className="site-shell relative z-10">
-            {/* Breadcrumb Navigation - Centered */}
-            <nav
-              className="mb-6 flex items-center justify-center gap-2 text-xs font-semibold text-muted-foreground mx-auto"
-              aria-label="Breadcrumb"
-            >
-              <a href="/" className="transition-colors hover:text-primary">
-                Home
-              </a>
-              <ChevronRight className="size-3 opacity-40" />
-              <span className="text-foreground">Our Work</span>
-            </nav>
+            {/* Premium Floating Breadcrumb Pill */}
+            <PageBreadcrumb currentPage="Our Work" />
 
             <div className="mx-auto max-w-4xl text-center flex flex-col items-center">
               {/* Eyebrow Ribbon */}
