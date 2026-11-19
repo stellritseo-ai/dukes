@@ -18,6 +18,7 @@ import {
   Filter,
   Grid2X2,
   Grid3X3,
+  Home,
   Layers,
   LayoutGrid,
   Maximize2,

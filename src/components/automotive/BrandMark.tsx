@@ -3,7 +3,7 @@ import logoImg from "@/assets/logo.png";
 export function BrandMark({ compact = false }: { compact?: boolean }) {
   return (
     <a
-      href="#home"
+      href="/"
       className="group flex items-center gap-3 transition-transform duration-200 hover:scale-[1.02]"
       aria-label="Grand Duke Automotive home"
     >

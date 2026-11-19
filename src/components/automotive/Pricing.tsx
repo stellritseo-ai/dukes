@@ -269,7 +269,7 @@ export function Pricing() {
                       </div>
                       <div className="mt-1 flex items-center gap-1 text-[10.5px] text-muted-foreground">
                         <Zap className="size-3 text-emerald-400" />
-                        <span>Rate for {vehicleClasses[vehicle].type}</span>
+                        <span>Rate for {vehicleClasses[vehicle]?.type ?? "Selected Class"}</span>
                       </div>
                     </div>
 
@@ -389,7 +389,7 @@ export function Pricing() {
                   </div>
                   <div className="mt-1 flex items-center gap-1 text-[11px] text-muted-foreground">
                     <Zap className="size-3 text-emerald-400" />
-                    <span>Rate for {vehicleClasses[vehicle].type}</span>
+                    <span>Rate for {vehicleClasses[vehicle]?.type ?? "Selected Class"}</span>
                   </div>
                 </div>
 

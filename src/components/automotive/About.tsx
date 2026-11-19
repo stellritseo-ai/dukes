@@ -245,9 +245,19 @@ export function About() {
               className="h-11 sm:h-12 rounded-full px-6 text-xs sm:text-[13px] font-bold"
               asChild
             >
+              <a href="/about">
+                <span>Our Story & Philosophy</span>
+                <ArrowRight className="size-3.5" />
+              </a>
+            </Button>
+
+            <Button
+              variant="outline"
+              className="h-11 sm:h-12 rounded-full px-5 text-xs sm:text-[13px] font-semibold text-muted-foreground hover:text-foreground border-border/80"
+              asChild
+            >
               <a href="#services">
                 <span>Explore All Services</span>
-                <ArrowRight className="size-3.5" />
               </a>
             </Button>
           </div>
