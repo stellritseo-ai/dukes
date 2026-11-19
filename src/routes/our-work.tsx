@@ -246,71 +246,107 @@ function OurWorkPage() {
 
       <main>
         {/* ========================================================================= */}
-        {/* SECTION 1: HERO & ANTHEM                                                  */}
+        {/* SECTION: BRODCOME (BREADCRUMB & HERO EXHIBITION BANNER)                   */}
         {/* ========================================================================= */}
-        <section className="relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-border/70 bg-gradient-to-b from-card via-background to-surface/40">
-          {/* Luxury High-Gloss Automotive Background Image with Overlays */}
+        <section
+          id="brodcome"
+          aria-label="Brodcome Navigation & Portfolio Exhibition Hero"
+          className="relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-18 lg:pb-24 border-b border-blue-900/40 bg-gradient-to-b from-[#060b18] via-[#091430] to-[#040814] text-slate-100"
+        >
+          {/* High-Gloss Luxury Automotive Background Image with Dramatic Overlays */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <img
               src="/services/hood-reflection.jpg"
-              alt="Grand Duke automotive reflection and clear coat mirror finish"
-              className="h-full w-full object-cover object-center scale-105 opacity-[0.16]"
+              alt="Grand Duke automotive mirror clear coat reflection"
+              className="h-full w-full object-cover object-center scale-105 opacity-35"
             />
-            {/* Ambient Vignette & Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-b from-card/85 via-background/90 to-background" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/12 via-transparent to-transparent" />
-            <div className="absolute inset-0 opacity-[0.035] bg-[linear-gradient(to_right,#00000018_1px,transparent_1px),linear-gradient(to_bottom,#00000018_1px,transparent_1px)] bg-[size:48px_48px]" />
+            {/* Cinematic Multilayer Lighting & Scrim Overlays */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#060b18]/92 via-[#091430]/80 to-[#040814]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#060b18] via-transparent to-[#060b18]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-600/20 via-transparent to-transparent" />
+            {/* Subtle Luminous Blueprint Carbon Mesh */}
+            <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#ffffff18_1px,transparent_1px),linear-gradient(to_bottom,#ffffff18_1px,transparent_1px)] bg-[size:36px_36px]" />
           </div>
 
-          {/* Ambient Lighting Gradients */}
+          {/* Radiant Top Multi-Color Gradient Beam */}
           <div
-            className="pointer-events-none absolute -top-32 left-1/2 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-primary/10 blur-[160px]"
+            className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500 via-primary via-cyan-400 to-transparent"
+            aria-hidden="true"
+          />
+
+          {/* Ambient Spectrum Glow Orbs */}
+          <div
+            className="pointer-events-none absolute -top-32 left-1/2 h-[520px] w-[950px] -translate-x-1/2 rounded-full bg-gradient-to-r from-blue-600/25 via-primary/20 to-cyan-400/20 blur-[160px]"
             aria-hidden="true"
           />
           <div
-            className="pointer-events-none absolute right-0 top-1/3 h-96 w-96 rounded-full bg-sky-400/10 blur-[140px]"
+            className="pointer-events-none absolute bottom-0 right-10 h-80 w-80 rounded-full bg-cyan-500/15 blur-[140px]"
             aria-hidden="true"
           />
 
           <div className="site-shell relative z-10">
-            {/* Premium Floating Breadcrumb Pill */}
-            <PageBreadcrumb currentPage="Our Work" />
+            {/* Premium Floating Breadcrumb Capsule Pill */}
+            <nav
+              aria-label="Breadcrumb"
+              className="mb-6 flex items-center justify-center mx-auto"
+            >
+              <div className="group inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-black/50 px-4 py-2 text-xs font-semibold backdrop-blur-2xl shadow-xl ring-1 ring-white/10 transition-all duration-300 hover:border-cyan-400/50 hover:bg-black/60">
+                <a
+                  href="/"
+                  className="inline-flex items-center gap-1.5 font-bold text-slate-300 transition-colors hover:text-white"
+                >
+                  <Home className="size-3.5 text-cyan-400 transition-transform duration-200 group-hover:scale-110" />
+                  <span>Home</span>
+                </a>
+
+                <ChevronRight className="size-3 text-slate-500 shrink-0" />
+
+                <span className="inline-flex items-center gap-1.5 font-extrabold text-white tracking-wide">
+                  <span className="relative flex size-2">
+                    <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+                  </span>
+                  <span>Our Work</span>
+                </span>
+              </div>
+            </nav>
 
             <div className="mx-auto max-w-4xl text-center flex flex-col items-center">
-              {/* Eyebrow Ribbon */}
-              <div className="eyebrow mb-4 mx-auto justify-center">
-                <span />
+              {/* Eyebrow Status Ribbon */}
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-cyan-300 backdrop-blur-md shadow-xs mb-4">
+                <span className="size-2 rounded-full bg-cyan-400 animate-pulse" />
                 <span>EXHIBITION OF PERFECTION • 77 VERIFIED TRANSFORMATIONS</span>
-                <span />
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-[44px] lg:leading-[1.15] text-center">
+              <h1 className="text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-[46px] lg:leading-[1.12] text-center">
                 Our Work &amp;{" "}
-                <span className="bg-gradient-to-r from-primary via-blue-600 to-sky-500 bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300 bg-clip-text text-transparent">
                   Portfolio
                 </span>
               </h1>
 
-              {/* Tagline */}
-              <div className="mt-2.5 text-xl font-extrabold tracking-tight sm:text-2xl lg:text-3xl bg-gradient-to-r from-primary via-blue-600 to-sky-500 bg-clip-text text-transparent text-center">
+              {/* Anthem Tagline with Sapphire Gradient */}
+              <div className="mt-3 text-xl font-extrabold tracking-tight sm:text-2xl lg:text-3xl bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300 bg-clip-text text-transparent text-center">
                 Precision in Every Reflection. Perfection in Every Line.
               </div>
 
               {/* Narrative Paragraph */}
-              <p className="mt-6 text-base sm:text-lg leading-relaxed text-muted-foreground font-medium max-w-3xl mx-auto text-center">
+              <p className="mt-5 text-base sm:text-lg leading-relaxed text-slate-300 font-medium max-w-3xl mx-auto text-center">
                 Welcome to the Grand Duke Automotive photographic exhibition. Over 17+ years of master craftsmanship, we have treated, corrected, and ceramic-shielded the world’s most discerning luxury vehicles, track-focused supercars, and prized collector classics. Every vehicle documented below was detailed inside our dust-free, climate-controlled studio or by our autonomous mobile concierge fleet across our 300-mile corridor.
               </p>
 
-              <p className="mt-3 text-sm sm:text-base leading-relaxed text-muted-foreground/90 max-w-2xl mx-auto text-center">
-                No filters. No staging tricks. Just true laboratory-grade detailing craftsmanship.
-              </p>
+              {/* Quality Guarantee Pill */}
+              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold text-slate-300 backdrop-blur-md">
+                <CheckCircle2 className="size-3.5 text-emerald-400" />
+                <span>No filters. No staging tricks. Just true laboratory-grade detailing craftsmanship.</span>
+              </div>
 
               {/* Action Buttons */}
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
                 <Button
                   variant="hero"
-                  className="h-12 rounded-full px-7 text-xs sm:text-sm font-extrabold shadow-premium tracking-wide transition-all duration-200 hover:scale-[1.02]"
+                  className="h-12 rounded-full px-8 text-xs sm:text-sm font-extrabold shadow-[0_0_25px_rgba(37,99,235,0.4)] tracking-wide transition-all duration-200 hover:scale-105 active:scale-95"
                   asChild
                 >
                   <a href="/book">
@@ -322,11 +358,11 @@ function OurWorkPage() {
 
                 <Button
                   variant="glass"
-                  className="h-12 rounded-full px-6 text-xs sm:text-sm font-bold"
+                  className="h-12 rounded-full px-7 text-xs sm:text-sm font-bold text-white border-white/20 bg-white/10 hover:bg-white/20"
                   asChild
                 >
                   <a href="/free-estimate">
-                    <Sparkles className="size-4" />
+                    <Sparkles className="size-4 text-cyan-400" />
                     <span>Request Free Estimate</span>
                     <ArrowUpRight className="size-4" />
                   </a>
@@ -334,9 +370,9 @@ function OurWorkPage() {
 
                 <a
                   href="tel:64687967732"
-                  className="inline-flex h-12 items-center gap-2 rounded-full border border-border/80 bg-card px-5 text-xs sm:text-sm font-bold text-foreground shadow-xs transition-all duration-200 hover:border-primary/40 hover:text-primary"
+                  className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 bg-black/60 px-6 text-xs sm:text-sm font-bold text-white shadow-xs transition-all duration-200 hover:border-cyan-400 hover:text-cyan-300"
                 >
-                  <Phone className="size-3.5 text-primary" />
+                  <Phone className="size-3.5 text-cyan-400" />
                   <span>Call: 6468 796 7732</span>
                 </a>
               </div>
@@ -350,48 +386,48 @@ function OurWorkPage() {
                   label: "Studio Works Showcased",
                   sub: "All 77 real project photos archive",
                   icon: Camera,
-                  color: "text-primary",
+                  color: "text-cyan-400",
                 },
                 {
                   value: "17+",
                   label: "Years Master Craftsmanship",
                   sub: "Certified master technicians",
                   icon: Award,
-                  color: "text-amber-500",
+                  color: "text-amber-400",
                 },
                 {
                   value: "99%",
                   label: "Defect & Swirl Rectification",
                   sub: "Multi-stage machine calibration",
                   icon: ShieldCheck,
-                  color: "text-emerald-500",
+                  color: "text-emerald-400",
                 },
                 {
                   value: "5.0 ★",
                   label: "Verified Client Rating",
                   sub: "Based on 120+ Google reviews",
                   icon: Star,
-                  color: "text-sky-500",
+                  color: "text-sky-400",
                 },
               ].map((stat, i) => {
                 const Icon = stat.icon;
                 return (
                   <div
                     key={i}
-                    className="relative overflow-hidden rounded-2xl border border-border/80 bg-card/80 p-5 shadow-xs backdrop-blur-md transition-all hover:border-primary/40 hover:shadow-md"
+                    className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/[0.06] p-5 sm:p-6 shadow-xl backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:bg-white/[0.1] hover:-translate-y-1"
                   >
                     <div className="flex items-center justify-between">
                       <div className={cn("text-2xl sm:text-3xl font-black tracking-tight", stat.color)}>
                         {stat.value}
                       </div>
-                      <div className="flex size-9 items-center justify-center rounded-xl bg-surface border border-border/70 text-muted-foreground">
-                        <Icon className="size-4" />
+                      <div className="flex size-9 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-slate-300">
+                        <Icon className="size-4 text-cyan-400" />
                       </div>
                     </div>
-                    <div className="mt-2 text-xs sm:text-sm font-extrabold text-foreground">
+                    <div className="mt-2 text-xs sm:text-sm font-extrabold text-white">
                       {stat.label}
                     </div>
-                    <div className="mt-0.5 text-[11px] text-muted-foreground font-medium">
+                    <div className="mt-0.5 text-[11px] text-slate-300 font-medium">
                       {stat.sub}
                     </div>
                   </div>
