@@ -10,6 +10,7 @@ import {
   CheckCircle2,
   ChevronRight,
   Clock,
+  Compass,
   Droplets,
   HelpCircle,
   Image as ImageIcon,
@@ -21,6 +22,7 @@ import {
   Shield,
   ShieldCheck,
   Sparkles,
+  Star,
   UploadCloud,
   X,
   Zap,
@@ -328,74 +330,84 @@ function FreeEstimatePage() {
 
       <main>
         {/* ========================================================================= */}
-        {/* SECTION 1: HERO & ANTHEM                                                  */}
+        {/* SECTION 1: BRODCOME (BREADCRUMB & HERO ESTIMATE BANNER)                   */}
         {/* ========================================================================= */}
-        <section id="brodcome" aria-label="Brodcome Navigation & Hero Banner" className="relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-20 lg:pb-24 border-b border-border/70 bg-gradient-to-b from-card via-background to-surface/40">
-          {/* Luxury High-Gloss Automotive Background Image with Atmospheric Overlays */}
+        <section
+          id="brodcome"
+          aria-label="Brodcome Navigation & Free Estimate Hero"
+          className="relative overflow-hidden pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-18 lg:pb-24 border-b border-blue-900/40 bg-gradient-to-b from-[#060b18] via-[#091430] to-[#040814] text-slate-100"
+        >
+          {/* High-Gloss Luxury Automotive Background Image with Dramatic Overlays */}
           <div className="pointer-events-none absolute inset-0 overflow-hidden">
             <img
               src="/services/engine-bay.jpg"
               alt="Grand Duke precision detailing engine and clear coat restoration"
-              className="h-full w-full object-cover object-center scale-105 opacity-[0.16]"
+              className="h-full w-full object-cover object-center scale-105 opacity-35"
             />
-            {/* Ambient Light Vignette & Gradient Overlays */}
-            <div className="absolute inset-0 bg-gradient-to-b from-card/85 via-background/90 to-background" />
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/12 via-transparent to-transparent" />
-            {/* Subtle Luminous Blueprint Mesh */}
-            <div className="absolute inset-0 opacity-[0.035] bg-[linear-gradient(to_right,#00000018_1px,transparent_1px),linear-gradient(to_bottom,#00000018_1px,transparent_1px)] bg-[size:48px_48px]" />
+            {/* Cinematic Multilayer Lighting & Scrim Overlays */}
+            <div className="absolute inset-0 bg-gradient-to-b from-[#060b18]/92 via-[#091430]/80 to-[#040814]" />
+            <div className="absolute inset-0 bg-gradient-to-r from-[#060b18] via-transparent to-[#060b18]" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-blue-600/20 via-transparent to-transparent" />
+            {/* Subtle Luminous Blueprint Carbon Mesh */}
+            <div className="absolute inset-0 opacity-[0.06] bg-[linear-gradient(to_right,#ffffff18_1px,transparent_1px),linear-gradient(to_bottom,#ffffff18_1px,transparent_1px)] bg-[size:36px_36px]" />
           </div>
 
-          {/* Ambient Lighting Gradients */}
+          {/* Radiant Top Multi-Color Gradient Beam */}
           <div
-            className="pointer-events-none absolute -top-32 left-1/2 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-primary/10 blur-[160px]"
+            className="pointer-events-none absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-blue-500 via-primary via-cyan-400 to-transparent"
+            aria-hidden="true"
+          />
+
+          {/* Ambient Spectrum Glow Orbs */}
+          <div
+            className="pointer-events-none absolute -top-32 left-1/2 h-[520px] w-[950px] -translate-x-1/2 rounded-full bg-gradient-to-r from-blue-600/25 via-primary/20 to-cyan-400/20 blur-[160px]"
             aria-hidden="true"
           />
           <div
-            className="pointer-events-none absolute right-0 top-1/3 h-96 w-96 rounded-full bg-sky-400/10 blur-[140px]"
+            className="pointer-events-none absolute bottom-0 right-10 h-80 w-80 rounded-full bg-cyan-500/15 blur-[140px]"
             aria-hidden="true"
           />
 
           <div className="site-shell relative z-10">
-            {/* Premium Floating Breadcrumb Pill */}
+            {/* Premium Floating Breadcrumb Capsule Pill */}
             <PageBreadcrumb currentPage="Request Your Free Estimate" />
 
             <div className="mx-auto max-w-4xl text-center flex flex-col items-center">
-              {/* Eyebrow Status Ribbon - Centered */}
-              <div className="eyebrow mb-4 mx-auto justify-center">
-                <span />
+              {/* Eyebrow Status Ribbon */}
+              <div className="inline-flex items-center gap-2.5 rounded-full border border-cyan-500/30 bg-cyan-500/10 px-4 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.14em] text-cyan-300 backdrop-blur-md shadow-xs mb-4">
+                <span className="size-2 rounded-full bg-cyan-400 animate-pulse" />
                 <span>COMPLIMENTARY &amp; NO-OBLIGATION CONSULTATION</span>
-                <span />
               </div>
 
               {/* Main Headline */}
-              <h1 className="text-3xl font-extrabold tracking-tight text-foreground sm:text-4xl lg:text-[44px] lg:leading-[1.15] text-center">
-                Request Your Free Estimate
+              <h1 className="text-3xl font-black tracking-tight text-white sm:text-4xl lg:text-[46px] lg:leading-[1.12] text-center">
+                Request Your{" "}
+                <span className="bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300 bg-clip-text text-transparent">
+                  Free Estimate
+                </span>
               </h1>
 
-              {/* Anthem Tagline with Luxury Sapphire Gradient */}
-              <div className="mt-2.5 text-xl font-extrabold tracking-tight sm:text-2xl lg:text-3xl bg-gradient-to-r from-primary via-blue-600 to-sky-500 bg-clip-text text-transparent text-center">
+              {/* Anthem Tagline with Sapphire Gradient */}
+              <div className="mt-3 text-xl font-extrabold tracking-tight sm:text-2xl lg:text-3xl bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300 bg-clip-text text-transparent text-center">
                 Precision Starts with a Personalized Quote.
               </div>
 
-              {/* Narrative Paragraph */}
-              <p className="mt-6 text-base sm:text-lg leading-relaxed text-muted-foreground font-medium max-w-3xl mx-auto text-center">
+              {/* Narrative Paragraphs */}
+              <p className="mt-5 text-base sm:text-lg leading-relaxed text-slate-300 font-medium max-w-3xl mx-auto text-center">
                 Every vehicle is unique. From the condition of your clear coat to the materials in your interior, no two cars require the exact same level of care. That is why Grand Duke Automotive offers complimentary, no-obligation estimates for every client.
               </p>
 
-              <p className="mt-3 text-sm sm:text-base leading-relaxed text-muted-foreground/90 max-w-3xl mx-auto text-center">
-                Whether you are looking for a meticulous maintenance wash, a full multi-stage paint correction, or long-term ceramic coating protection, our Master Technicians will assess your vehicle and provide a transparent, accurate quote tailored to your specific needs.
-              </p>
-
-              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-primary/25 bg-primary/5 px-4 py-1.5 text-xs font-bold text-primary shadow-xs">
-                <Sparkles className="size-3.5" />
-                <span>No hidden fees. No surprise upsells. Just honest, expert advice.</span>
+              {/* Quality Guarantee Pill */}
+              <div className="mt-4 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold text-slate-300 backdrop-blur-md">
+                <CheckCircle2 className="size-3.5 text-emerald-400" />
+                <span>No hidden fees • No surprise upsells • Honest, expert Master Technician recommendations</span>
               </div>
 
               {/* Action Buttons */}
               <div className="mt-8 flex flex-wrap items-center justify-center gap-3.5">
                 <Button
                   variant="hero"
-                  className="h-12 rounded-full px-7 text-xs sm:text-sm font-extrabold shadow-premium tracking-wide transition-all duration-200 hover:scale-[1.02]"
+                  className="h-12 rounded-full px-8 text-xs sm:text-sm font-extrabold shadow-[0_0_25px_rgba(37,99,235,0.4)] tracking-wide transition-all duration-200 hover:scale-105 active:scale-95"
                   asChild
                 >
                   <a href="#estimate-form">
@@ -407,78 +419,81 @@ function FreeEstimatePage() {
 
                 <Button
                   variant="glass"
-                  className="h-12 rounded-full px-6 text-xs sm:text-sm font-bold"
+                  className="h-12 rounded-full px-7 text-xs sm:text-sm font-bold text-white border-white/20 bg-white/10 hover:bg-white/20"
                   asChild
                 >
-                  <a href="#how-it-works">
-                    <span>How It Works</span>
-                    <ChevronRight className="size-4" />
+                  <a href="/book">
+                    <CalendarDays className="size-4 text-cyan-400" />
+                    <span>Book Online Directly</span>
+                    <ArrowUpRight className="size-4" />
                   </a>
                 </Button>
 
                 <a
-                  href="tel:+14697967732"
-                  className="inline-flex h-12 items-center gap-2 rounded-full border border-border/80 bg-card px-5 text-xs sm:text-sm font-bold text-foreground shadow-xs transition-all duration-200 hover:border-primary/40 hover:text-primary"
+                  href="tel:64687967732"
+                  className="inline-flex h-12 items-center gap-2 rounded-full border border-white/20 bg-black/60 px-6 text-xs sm:text-sm font-bold text-white shadow-xs transition-all duration-200 hover:border-cyan-400 hover:text-cyan-300"
                 >
-                  <Phone className="size-3.5 text-primary" />
-                  <span>Call: (469) 796-7732</span>
+                  <Phone className="size-3.5 text-cyan-400" />
+                  <span>Call: 6468 796 7732</span>
                 </a>
               </div>
             </div>
 
-            {/* 4-Metric Floating Luxury Stats Deck - Centered */}
-            <div className="mt-12 sm:mt-16 grid grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-4 max-w-5xl mx-auto">
-              <div className="group relative overflow-hidden rounded-2xl border border-border/80 bg-card/85 p-5 text-center shadow-xs backdrop-blur-md transition-all duration-200 hover:border-primary/40 hover:shadow-md">
-                <div className="flex items-center justify-center gap-1.5 text-muted-foreground">
-                  <ShieldCheck className="size-3.5 text-emerald-500" />
-                  <span className="text-[10.5px] font-extrabold uppercase tracking-widest text-emerald-500">Pledge</span>
-                </div>
-                <div className="mt-2 text-3xl font-black tracking-tight text-foreground sm:text-4xl">
-                  100% <span className="text-emerald-500 text-xl">Free</span>
-                </div>
-                <p className="mt-1 text-xs text-muted-foreground font-medium">
-                  Zero obligation or commitment required
-                </p>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-2xl border border-border/80 bg-card/85 p-5 text-center shadow-xs backdrop-blur-md transition-all duration-200 hover:border-primary/40 hover:shadow-md">
-                <div className="flex items-center justify-center gap-1.5 text-muted-foreground">
-                  <Clock className="size-3.5 text-primary" />
-                  <span className="text-[10.5px] font-extrabold uppercase tracking-widest text-primary">Response</span>
-                </div>
-                <div className="mt-2 text-3xl font-black tracking-tight text-foreground sm:text-4xl">
-                  24 <span className="text-primary text-xl">Hours</span>
-                </div>
-                <p className="mt-1 text-xs text-muted-foreground font-medium">
-                  Direct specialist consultation &amp; quote delivery
-                </p>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-2xl border border-border/80 bg-card/85 p-5 text-center shadow-xs backdrop-blur-md transition-all duration-200 hover:border-primary/40 hover:shadow-md">
-                <div className="flex items-center justify-center gap-1.5 text-muted-foreground">
-                  <Award className="size-3.5 text-sky-500" />
-                  <span className="text-[10.5px] font-extrabold uppercase tracking-widest text-sky-500">Mastery</span>
-                </div>
-                <div className="mt-2 text-3xl font-black tracking-tight text-foreground sm:text-4xl">
-                  17+ <span className="text-sky-500 text-xl">Years</span>
-                </div>
-                <p className="mt-1 text-xs text-muted-foreground font-medium">
-                  Estimates crafted by master certified artisans
-                </p>
-              </div>
-
-              <div className="group relative overflow-hidden rounded-2xl border border-border/80 bg-card/85 p-5 text-center shadow-xs backdrop-blur-md transition-all duration-200 hover:border-primary/40 hover:shadow-md">
-                <div className="flex items-center justify-center gap-1.5 text-muted-foreground">
-                  <Sparkles className="size-3.5 text-amber-500" />
-                  <span className="text-[10.5px] font-extrabold uppercase tracking-widest text-amber-500">Quotes</span>
-                </div>
-                <div className="mt-2 text-3xl font-black tracking-tight text-foreground sm:text-4xl">
-                  Itemized
-                </div>
-                <p className="mt-1 text-xs text-muted-foreground font-medium">
-                  Calibrated packages with zero hidden fees
-                </p>
-              </div>
+            {/* 4-Card Luxury KPI Stats Deck */}
+            <div className="mt-14 grid gap-4 grid-cols-2 lg:grid-cols-4 max-w-5xl mx-auto">
+              {[
+                {
+                  value: "100% Free",
+                  label: "Zero Obligation",
+                  sub: "No commitment required",
+                  icon: ShieldCheck,
+                  color: "text-emerald-400",
+                },
+                {
+                  value: "<24 Hrs",
+                  label: "Rapid Delivery",
+                  sub: "Direct specialist consultation",
+                  icon: Clock,
+                  color: "text-cyan-400",
+                },
+                {
+                  value: "17+ Yrs",
+                  label: "Master Expertise",
+                  sub: "Quotes by certified artisans",
+                  icon: Award,
+                  color: "text-amber-400",
+                },
+                {
+                  value: "Itemized",
+                  label: "Transparent Pricing",
+                  sub: "Calibrated packages, zero hidden fees",
+                  icon: Sparkles,
+                  color: "text-sky-400",
+                },
+              ].map((stat, i) => {
+                const Icon = stat.icon;
+                return (
+                  <div
+                    key={i}
+                    className="relative overflow-hidden rounded-2xl border border-white/15 bg-white/[0.06] p-5 sm:p-6 shadow-xl backdrop-blur-xl transition-all duration-300 hover:border-cyan-400/50 hover:bg-white/[0.1] hover:-translate-y-1"
+                  >
+                    <div className="flex items-center justify-between">
+                      <div className={cn("text-2xl sm:text-3xl font-black tracking-tight", stat.color)}>
+                        {stat.value}
+                      </div>
+                      <div className="flex size-9 items-center justify-center rounded-xl bg-white/10 border border-white/15 text-slate-300">
+                        <Icon className="size-4 text-cyan-400" />
+                      </div>
+                    </div>
+                    <div className="mt-2 text-xs sm:text-sm font-extrabold text-white">
+                      {stat.label}
+                    </div>
+                    <div className="mt-0.5 text-[11px] text-slate-300 font-medium">
+                      {stat.sub}
+                    </div>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

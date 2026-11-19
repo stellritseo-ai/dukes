@@ -22,29 +22,29 @@ export function PageBreadcrumb({
       aria-label="Breadcrumb"
       className={cn("mb-6 flex items-center justify-center mx-auto", className)}
     >
-      <div className="group inline-flex items-center gap-2 rounded-full border border-border/80 bg-card/90 px-3.5 py-1.5 text-xs shadow-[0_2px_12px_-2px_rgba(15,23,42,0.06)] backdrop-blur-xl ring-1 ring-border/40 transition-all duration-300 hover:border-primary/40 hover:shadow-md">
+      <div className="group inline-flex items-center gap-2.5 rounded-full border border-white/20 bg-black/50 px-4 py-2 text-xs font-semibold backdrop-blur-2xl shadow-xl ring-1 ring-white/10 transition-all duration-300 hover:border-cyan-400/50 hover:bg-black/60">
         {/* Home root link */}
         <a
           href="/"
-          className="inline-flex items-center gap-1.5 font-bold text-muted-foreground transition-colors hover:text-primary"
+          className="inline-flex items-center gap-1.5 font-bold text-slate-300 transition-colors hover:text-white"
         >
-          <Home className="size-3.5 text-primary transition-transform duration-200 group-hover:scale-110" />
+          <Home className="size-3.5 text-cyan-400 transition-transform duration-200 group-hover:scale-110" />
           <span>Home</span>
         </a>
 
         {/* Intermediate crumbs if any */}
         {items?.map((item, idx) => (
           <div key={idx} className="inline-flex items-center gap-2">
-            <ChevronRight className="size-3 text-muted-foreground/40 shrink-0" />
+            <ChevronRight className="size-3 text-slate-500 shrink-0" />
             {item.href ? (
               <a
                 href={item.href}
-                className="font-bold text-muted-foreground transition-colors hover:text-primary"
+                className="font-bold text-slate-300 transition-colors hover:text-white"
               >
                 {item.label}
               </a>
             ) : (
-              <span className="text-muted-foreground font-semibold">
+              <span className="text-slate-400 font-semibold">
                 {item.label}
               </span>
             )}
@@ -52,13 +52,13 @@ export function PageBreadcrumb({
         ))}
 
         {/* Separator */}
-        <ChevronRight className="size-3 text-muted-foreground/40 shrink-0" />
+        <ChevronRight className="size-3 text-slate-500 shrink-0" />
 
         {/* Active Leaf Pill */}
-        <span className="inline-flex items-center gap-1.5 font-extrabold text-foreground tracking-wide">
-          <span className="relative flex size-1.5">
-            <span className="absolute inline-flex size-full animate-ping rounded-full bg-primary/60 opacity-75" />
-            <span className="relative inline-flex size-1.5 rounded-full bg-primary" />
+        <span className="inline-flex items-center gap-1.5 font-extrabold text-white tracking-wide">
+          <span className="relative flex size-2">
+            <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+            <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
           </span>
           <span>{currentPage}</span>
         </span>
@@ -66,4 +66,3 @@ export function PageBreadcrumb({
     </nav>
   );
 }
-
